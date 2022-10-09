@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity
                     etPwd.setTypeface(Typeface.DEFAULT);
                 }
             }
+
         });
     }
 
