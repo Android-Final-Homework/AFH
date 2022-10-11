@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/OtherThings/AFH/app/src/main/res/drawable-v24/circle.xml" value="0.2265" />
+        <entry key="..\:/OtherThings/AFH/app/src/main/res/layout/activity_alter_info.xml" value="0.19610507246376813" />
+        <entry key="..\:/OtherThings/AFH/app/src/main/res/layout/activity_login.xml" value="0.19610507246376813" />
+        <entry key="..\:/OtherThings/AFH/app/src/main/res/menu/menu.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/Administrator/Desktop/AFH/app/src/main/res/drawable-v24/ic_baseline_lock_24.xml" value="0.15" />
         <entry key="..\:/Users/Administrator/Desktop/AFH/app/src/main/res/drawable-v24/ic_baseline_person_outline_24.xml" value="0.15" />
         <entry key="..\:/Users/Administrator/Desktop/AFH/app/src/main/res/drawable-v24/ic_baseline_visibility_24.xml" value="0.15" />

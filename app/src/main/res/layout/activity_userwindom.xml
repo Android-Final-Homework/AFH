@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="?android:attr/actionBarSize"
+    tools:context="com.example.finalwork.userwindom">
+
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/viewPage"
+        >
+    </androidx.viewpager.widget.ViewPager>
+
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:background="?android:attr/windowBackground"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu"
+        >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</LinearLayout>

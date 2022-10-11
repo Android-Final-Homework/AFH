@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="40dp"
+    tools:context=".activity.PostActivity">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/sharePicture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignLeft="@id/picContent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#d6d7d7"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_add_24" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@id/sharePicture"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/mycolor2"></View>
+
+    <EditText
+        android:id="@+id/picContent"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/sharePicture"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:gravity="top"
+        android:hint="请输入图片描述..."
+        android:maxLines="5" />
+
+
+    <Button
+        android:id="@+id/bt_post"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/picContent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="94dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="295dp"
+        android:background="@drawable/bt_stlye"
+        android:text="分 享"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>
+
