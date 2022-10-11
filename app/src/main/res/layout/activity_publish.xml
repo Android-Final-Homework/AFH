@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.example.finalwork.activity.publishActivity">
+    <EditText
+        android:id="@+id/sharedtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="10"
+        android:hint="分享新鲜事..."
+        android:background="#FFFFFF"
+        android:padding="5dp"
+        android:gravity="top"
+        android:layout_marginBottom="10dp"
+        android:inputType="textMultiLine"/>
+    <ImageView
+        android:id="@+id/shareimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/sharedphoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:drawablePadding="16dp"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="添加照片"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/deletephoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:drawablePadding="20dp"
+        android:padding="16dp"
+        android:text="取消"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/shardup"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="#00BCD4"
+        android:text="发布" />
+
+</LinearLayout>

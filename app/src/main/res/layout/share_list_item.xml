@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="8dp"
+app:cardCornerRadius="8dp"
+    >
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/abc_vector_test"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintVertical_bias="0.0"
+    tools:showIn="@layout/activity_my_share">
+    <!--头像-->
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@id/iv_image"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/test_img2"
+        app:riv_oval="true" />
+
+    <!--图片描述-->
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingBottom="4dp"
+        android:text="图片描述"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+
+    <!--分享的图片-->
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_image"
+        android:layout_width="400dp"
+        android:layout_height="225dp"
+        android:layout_below="@id/tv_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/test"
+        app:riv_corner_radius="10dp" />
+
+    <!--图片发布日期-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_publish_date"
+        android:layout_alignTop="@id/iv_head"
+        android:layout_alignRight="@id/iv_image"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_marginRight="20dp"
+        android:textSize="16sp"
+        android:textColor="#666666"
+        android:text="1970-01-01" />
+
+    <!--用户名-->
+    <TextView
+        android:id="@+id/tv_nickname"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_head"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/iv_head"
+        android:text="昵称"
+        android:textSize="20sp" />
+
+    <!--点赞数和图标-->
+    <TextView
+        android:id="@+id/tv_likes"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_image"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/iv_like"
+        android:text="0"
+        android:textColor="@color/text_color"
+        android:textSize="22sp" />
+
+    <ImageView
+        android:id="@+id/iv_like"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/iv_image"
+        android:layout_alignLeft="@id/iv_image"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:src="@drawable/like" />
+
+    <!--分享数和图标-->
+
+
+    <ImageView
+        android:id="@+id/iv_share"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/iv_image"
+        android:layout_alignLeft="@id/iv_image"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/share" />
+
+    <!--评论数和图标-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/tv_comment_num"-->
+<!--        style="@style/TextAppearance.AppCompat.Subhead"-->
+<!--        android:layout_below="@id/iv_image"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginRight="3dp"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:layout_toRightOf="@id/iv_comment"-->
+<!--        android:text="0"-->
+<!--        android:textSize="22sp" />-->
+
+    <ImageView
+        android:id="@+id/iv_save"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/iv_image"
+        android:layout_alignLeft="@id/iv_image"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/down" />
+</RelativeLayout>
+</androidx.cardview.widget.CardView>

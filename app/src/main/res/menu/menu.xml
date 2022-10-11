@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_one"
+        android:title="浏览"/>
+
+    <item
+        android:id="@+id/navigation_two"
+        android:title="发布"/>
+
+    <item
+        android:id="@+id/navigation_three"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="我的"/>
+
+
+</menu>

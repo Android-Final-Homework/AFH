@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mycolor2">
+
+
+    <RelativeLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/login_logo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/login_logo" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_logo"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/account"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/et_stely"
+                android:hint="账号"
+                android:maxLength="14"
+                android:paddingLeft="55dp"
+                android:paddingRight="60dp" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/ic_baseline_person_24"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/account_clear"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_baseline_clear_24"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/password_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/account_layout"
+            android:layout_marginTop="15dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/et_stely"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:paddingLeft="55dp"
+                android:paddingRight="60dp" />
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/ic_baseline_lock_24" />
+
+            <ImageView
+                android:id="@+id/pwd_visibility"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_visibility_off_24"
+                android:visibility="visible" />
+
+        </FrameLayout>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_layout"
+            android:layout_alignStart="@+id/password_layout"
+            android:layout_alignLeft="@+id/password_layout"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="11dp"
+            android:buttonTint="@color/mycolor1"
+            android:minHeight="48dp"
+            android:text="记住密码"
+            android:textColor="@color/text_color" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password_layout"
+            android:layout_alignRight="@id/account_layout"
+            android:background="#00000000"
+            android:text="没有账号？点击注册"
+            android:textColor="@color/text_color"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkBox"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bt_stlye"
+            android:gravity="center"
+            android:text="登 录"
+            android:textColor="@android:color/white"
+            android:textSize="24dp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
