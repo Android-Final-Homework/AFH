@@ -26,7 +26,6 @@ import cn.bmob.v3.datatype.BmobPointer;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-
 public class shareFragment extends Fragment {
 
     ShareAdapter shareAdapter;
@@ -34,16 +33,13 @@ public class shareFragment extends Fragment {
     SwipeRefreshLayout swipeRefreshLayout;
     Boolean isRefresh = false;
     public shareFragment() {
-
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         checkNeedPermissions();
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,7 +67,6 @@ public class shareFragment extends Fragment {
                                     query.findObjects(new FindListener<User>() {
                                         @Override
                                         public void done(List<User> list, BmobException e) {
-
                                             if (e == null) {
                                                 ll.setLikes(list.size());
                                                 ll.setLikeState(false);

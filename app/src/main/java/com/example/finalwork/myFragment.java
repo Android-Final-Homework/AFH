@@ -23,8 +23,6 @@ import cn.bmob.v3.datatype.BmobFile;
 
 
 public class myFragment extends Fragment {
-
-
     String username;//账号
     TextView tvNickname;//昵称
     ImageView ivHeadPicture;//头像
@@ -45,22 +43,16 @@ public class myFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("66667", "个人中心");
-
         //下载图片
 //        User currentUser = BmobUser.getCurrentUser(User.class);
 //        nickname = currentUser.getNickname();
 //        username = currentUser.getUsername();
         //headPicture = currentUser.getHeadpicture();
-
-
 //
 //        Log.d("myFragment", nickname);
 //        Log.d("myFragment", headPicture.getUrl());
 
-
-
     }
-
 //    @Override
 //    public void onResume() {
 //        super.onResume();
@@ -69,7 +61,6 @@ public class myFragment extends Fragment {
 //        tvUsername.setText(currentUser.getUsername());
 //        Glide.with(getContext()).load(currentUser.getHeadpicture().getUrl()).into(ivHeadPicture);
 //    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -88,8 +79,6 @@ public class myFragment extends Fragment {
         tvNickname.setText(nickname);
         tvUsername.setText(username);
         //Glide.with(getContext()).load(headPicture.getUrl()).into(ivHeadPicture);
-
-
         //
         btShare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,8 +87,6 @@ public class myFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
 
         rlMyshare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +105,6 @@ public class myFragment extends Fragment {
                 getActivity().finish();
             }
         });
-
         rlAlterInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,9 +179,7 @@ public class myFragment extends Fragment {
 //            }
 //        });
 
-
         // Inflate the layout for this fragment
-
         return rootView;
     }
 }
