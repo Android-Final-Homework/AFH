@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 /*
 * 图片放大
+*
 * */
 public class DialogImage extends Dialog {
     public ImageView picture;
@@ -73,12 +74,5 @@ public class DialogImage extends Dialog {
     public void dismiss(){
         super.dismiss();
     }
-
-
-
-
-
-
-
 
 }
