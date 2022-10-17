@@ -1,59 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
     android:paddingLeft="16dp"
+    android:paddingTop="1dp"
     android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    tools:context="com.example.finalwork.activity.publishActivity">
+    android:paddingBottom="16dp"
+    tools:context="com.example.photoshare.fragment.publishFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detail_toolbar"
+        android:layout_width="418dp"
+        android:layout_height="28dp"
+        android:background="@color/mycolor1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:subtitleTextColor="@color/white"
+        app:titleMarginStart="60dp"
+        app:titleTextColor="@color/white" />
+
+    <TextView
+        android:id="@+id/pu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:singleLine="true"
+        android:text="发布"
+        android:textColor="#5A5656"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/detail_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/detail_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
     <EditText
         android:id="@+id/sharedtext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:lines="10"
-        android:hint="分享新鲜事..."
-        android:background="#FFFFFF"
-        android:padding="5dp"
+        android:layout_width="323dp"
+        android:layout_height="219dp"
+        android:autofillHints=""
+        android:background="@drawable/edit_background"
         android:gravity="top"
-        android:layout_marginBottom="10dp"
-        android:inputType="textMultiLine"/>
-    <ImageView
-        android:id="@+id/shareimg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:hint="分享新鲜事..."
+        android:inputType="textMultiLine"
+        android:lines="10"
+        android:padding="5dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/getShare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group2"
+        app:layout_constraintVertical_bias="0.513"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/sharedtext2"
+        android:layout_width="276dp"
+        android:layout_height="44dp"
+        android:background="@drawable/edit_background"
+        android:gravity="top"
+        android:hint=" 文章标题..."
+        android:inputType="textMultiLine"
+        android:lines="10"
+
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/sharedtext"
+        app:layout_constraintEnd_toEndOf="@+id/sharedtext"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/sharedtext"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.557"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/sharedphoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="64dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:backgroundTint="#FFFFFF"
         android:drawablePadding="16dp"
         android:gravity="center_vertical"
-        android:padding="16dp"
+        android:padding="5dp"
         android:text="添加照片"
-        android:textColor="@color/black"/>
+        android:textColor="@color/material_on_surface_disabled"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sharedtext"
+        app:layout_constraintEnd_toEndOf="@+id/sharedtext" />
 
-    <Button
-        android:id="@+id/deletephoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clear"
+        android:layout_width="105dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#D5D0D2"
         android:drawablePadding="20dp"
-        android:padding="16dp"
         android:text="取消"
         android:textColor="@color/black"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="@+id/saveShare"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/saveShare"
+        app:layout_constraintTop_toTopOf="@+id/saveShare"
+        app:strokeColor="#DCDCDC"
+        app:strokeWidth="2dp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/shardup"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginBottom="160dp"
-        android:backgroundTint="#00BCD4"
-        android:text="发布" />
+        android:layout_width="112dp"
 
-</LinearLayout>
+        android:layout_height="46dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginLeft="164dp"
+        android:backgroundTint="#CFABEF"
+        android:text="确定发布"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="@+id/getShare"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/clear"
+        app:layout_constraintTop_toTopOf="@+id/clear"
+        app:layout_constraintVertical_bias="0.0"
+        app:strokeColor="#DCDCDC"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveShare"
+        android:layout_width="106dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="196dp"
+        android:layout_marginRight="196dp"
+        android:layout_marginBottom="108dp"
+        android:backgroundTint="#CFABEF"
+        android:text="保存分享"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="#DCDCDC"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/getShare"
+        android:layout_width="111dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:backgroundTint="#CFABEF"
+        android:text="同步分享"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/saveShare"
+        app:layout_constraintTop_toTopOf="@+id/saveShare"
+        app:layout_constraintVertical_bias="0.0"
+        app:strokeColor="#DCDCDC"
+        app:strokeWidth="2dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="shardup"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <ImageView
+        android:id="@+id/shareimg"
+        android:layout_width="45dp"
+        android:layout_height="33dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/photo"
+        app:layout_constraintBottom_toBottomOf="@+id/sharedtext"
+        app:layout_constraintEnd_toEndOf="@+id/sharedphoto"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="@+id/sharedphoto"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="661dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

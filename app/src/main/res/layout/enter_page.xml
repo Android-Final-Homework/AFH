@@ -4,17 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fengmian"
+    android:background="@drawable/bg_fmain"
     tools:context=".activity.EnterPageActivity">
 
 
     <TextView
         android:id="@+id/enterTitle"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="30dp"
+        android:layout_width="296dp"
+        android:layout_height="120dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="286dp"
+        android:autoSizeMaxTextSize="@android:dimen/app_icon_size"
         android:gravity="center"
-        android:layout_marginTop="110dp"/>
+        android:text="安卓Android"
+        android:textSize="25dp" />
 
 </RelativeLayout>

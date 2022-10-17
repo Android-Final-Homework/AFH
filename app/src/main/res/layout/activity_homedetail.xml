@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+ <LinearLayout
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+     <View
+         android:id="@+id/view"
+         android:layout_width="394dp"
+         android:layout_height="0dp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent" />
+
+
+<androidx.appcompat.widget.Toolbar
+    android:background="@color/mycolor1"
+    android:id="@+id/detail_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="33dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/view"
+    app:subtitleTextColor="@color/white"
+    app:titleMarginStart="60dp"
+    app:titleTextColor="@color/white">
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:singleLine="true"
+        android:text="详情"
+        android:textColor="#5A5656"
+        android:textSize="14sp" />
+
+</androidx.appcompat.widget.Toolbar>
+</LinearLayout>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#FFFFFF"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="609dp"
+                    android:background="@color/white"
+                    app:layout_collapseMode="pin">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/iv_head1"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="24dp"
+                        android:src="@drawable/test_img2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:riv_corner_radius="20dp" />
+
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:text="这里是用户名"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@+id/iv_head1"
+                        app:layout_constraintTop_toTopOf="@+id/iv_head1" />
+
+                    <TextView
+                        android:id="@+id/sharetime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
+                        android:text="2022-10-16"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toEndOf="@+id/iv_head1"
+                        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/focus_button"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="80dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:text="+关注"
+                        android:textColor="#8F95D4"
+                        android:textSize="10sp"
+                        app:cornerRadius="8dp"
+                        app:layout_constraintBottom_toTopOf="@+id/banner"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.135"
+                        app:strokeColor="#8F95D4"
+                        app:strokeWidth="2dp" />
+
+                    <com.youth.banner.Banner
+                        android:background="@color/bk"
+                        android:id="@+id/banner"
+                        android:layout_width="0dp"
+                        android:layout_height="369dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="108dp"
+                        android:layout_marginEnd="20dp"
+                        android:backgroundTint="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_head1">
+
+                    </com.youth.banner.Banner>
+
+                    <ImageView
+                        android:id="@+id/iv_share"
+                        android:layout_width="33dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/zhuanfa"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/banner"
+                        app:layout_constraintVertical_bias="0.444" />
+
+                    <ImageView
+                        android:id="@+id/iv_save"
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/collect"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_share"
+                        app:layout_constraintHorizontal_bias="0.495"
+                        app:layout_constraintStart_toEndOf="@+id/iv_like"
+                        app:layout_constraintTop_toBottomOf="@+id/banner"
+                        app:layout_constraintVertical_bias="0.461" />
+
+                    <ImageView
+                        android:id="@+id/iv_like"
+                        android:layout_width="38dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="188dp"
+                        android:layout_marginRight="188dp"
+                        android:src="@drawable/like2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/likenum"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/iv_save"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/likenum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="116dp"
+                        android:layout_marginRight="116dp"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView2"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/likenum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="116dp"
+                        android:layout_marginRight="116dp"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView2"
+                        app:layout_constraintVertical_bias="0.0" />
+
+
+                    <TextView
+                        android:background="@color/bk"
+                        android:id="@+id/contentdetail"
+                        android:layout_width="356dp"
+                        android:layout_height="76dp"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@+id/banner"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.363"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_head1"
+                        app:layout_constraintVertical_bias="0.568" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_marginTop="50dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:background="@color/bk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="评论区" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:overScrollMode="never"
+                    />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

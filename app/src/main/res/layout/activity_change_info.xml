@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".page.userInfo.Login"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_weight="1"
+            android:background="@drawable/newcolor">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/change_avatar3"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:riv_oval="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:layout_marginTop="60dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical|left"
+                android:text="此用户id:"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/change_userId"
+                android:layout_width="338dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="2dp"
+                android:text="9999999999999999"
+                android:textColor="#000000"
+                android:textColorHint="#78909C"
+                android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <View
+
+                android:id="@+id/view2"
+                android:layout_width="323dp"
+                android:layout_height="1dp"
+                android:layout_alignStart="@+id/change_userId"
+                android:layout_alignLeft="@+id/change_userId"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="0dp"
+                android:background="#aa000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="43dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+
+                android:gravity="center_vertical|left"
+                android:text="用户名："
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/change_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="17dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="1dp"
+
+                android:layout_marginRight="1dp"
+                android:hint="用户名不能为空"
+                android:textColor="#000000"
+                android:textColorHint="#78909C"
+                android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="126dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="37dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="-1dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical|left"
+
+                android:text="简介："
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/change_introduce"
+                android:layout_width="334dp"
+                android:layout_height="54dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="26dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="35dp"
+
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="25dp"
+                android:hint="这个人很神秘，还没有任何介绍"
+                android:textColor="#000000"
+                android:textColorHint="#78909C"
+                android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="116dp"
+                android:layout_height="39dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="-3dp"
+                android:layout_marginRight="10dp"
+
+                android:gravity="center_vertical|left"
+                android:text="性别："
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/change_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="0dp"
+
+                android:layout_marginRight="0dp"
+                android:hint="秘密"
+                android:textColor="#000000"
+                android:textColorHint="#78909C"
+                android:textSize="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="136dp"
+            android:layout_marginBottom="32dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/change_save"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="115dp"
+                android:layout_marginLeft="115dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="109dp"
+                android:layout_marginRight="109dp"
+                android:layout_marginBottom="28dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="保存信息"
+                android:textColor="#8F95D4"
+                android:textSize="10sp"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.135"
+                app:strokeColor="#8F95D4"
+                app:strokeWidth="2dp" />
+            <!--            <Button-->
+            <!--                android:id="@+id/change_save"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentTop="true"-->
+            <!--                android:layout_marginStart="15dp"-->
+            <!--                android:layout_marginTop="33dp"-->
+            <!--                android:layout_marginEnd="15dp"-->
+            <!--                android:text="保存修改"-->
+            <!--                android:textColor="@android:color/white" />-->
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout_editor_absoluteY="158dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/change_avatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="66dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_oval="true" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
