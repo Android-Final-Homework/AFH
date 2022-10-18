@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalwork.R;
 
+//点击进入后停留三秒
 public class EnterPageActivity extends AppCompatActivity {
 
     private TextView tit;

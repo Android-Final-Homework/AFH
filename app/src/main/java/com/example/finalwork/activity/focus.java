@@ -77,7 +77,6 @@ public class focus extends AppCompatActivity {
         });
 
 
-
     }  private void browse(){
         Log.d("try", "zxczxcc");
         OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
@@ -122,7 +121,6 @@ public class focus extends AppCompatActivity {
 
         userId = spFile.getString(userIdKey, null);
         Log.d("6666", "onActivityCreated: " + userId);
-
     }
 
 }

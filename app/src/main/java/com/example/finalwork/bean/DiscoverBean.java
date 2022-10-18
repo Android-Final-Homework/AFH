@@ -5,7 +5,6 @@ import java.util.List;
 
 public class DiscoverBean implements Serializable {
 
-
     private int code;
     private String msg;
     private DataBean data;

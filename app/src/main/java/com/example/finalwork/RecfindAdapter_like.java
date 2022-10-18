@@ -67,10 +67,7 @@ public class RecfindAdapter_like extends RecyclerView.Adapter<RecfindAdapter_lik
     String collectId;
     String usename;
 
-    DefultBean defultBean;
-
     int temp_like = -10, temp_collect = -10;
-
 
     public RecfindAdapter_like(Context context, List<FindBean.DataBean.RecordsBean> showList, String userId) {
         this.context = context;
@@ -97,12 +94,11 @@ public class RecfindAdapter_like extends RecyclerView.Adapter<RecfindAdapter_lik
             Glide.with(context).load(shows.getImageUrlList().get(0)).into(holder.ivPicture);
         else
             Glide.with(context).load("https://guet-lab.oss-cn-hangzhou.aliyuncs.com/api/2022/10/12/ce5fc795-775e-4513-8a0f-a2841dcc2cd9.jpg").into(holder.ivPicture);
-        //Glide.with(context).load(shows.getImageUrlList().get(0)).into(holder.ivHead);
+
         holder.tvTitle.setText(shows.getTitle());
         holder.tvContent.setText(shows.getContent());
         holder.tvTime.setText(timeStamp2Date(shows.getCreateTime(), "yyyy-MM-dd"));
-        //holder.tvLikeNum.setText(Integer.toString(shows.getLikeNum()));
-        //holder.tvCollectNum.setText(Integer.toString(shows.getCollectNum()));
+
         holder.tvLikeNum.setVisibility(View.INVISIBLE);
 
         holder.ivLike.setVisibility(View.INVISIBLE);//爱心

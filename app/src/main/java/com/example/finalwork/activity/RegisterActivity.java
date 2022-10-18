@@ -53,6 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
     private RegisterBean registerBean;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

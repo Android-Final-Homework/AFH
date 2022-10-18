@@ -201,7 +201,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 UserInfoSPTool usp = new UserInfoSPTool(spFile);
                 App app = new App();
-                //User user=usp.getInfo();
+
                 if (loginBean.getData().getIntroduce() != null)
                     introduce = (String) loginBean.getData().getIntroduce();
                 else

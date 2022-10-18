@@ -1,5 +1,6 @@
 package com.example.finalwork.bean;
 
+//注册信息
 public class RegisterBean {
 
     private String msg;
