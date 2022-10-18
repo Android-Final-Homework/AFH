@@ -46,7 +46,6 @@ public class browseFragment extends Fragment {
     RecyclerView mRecyclerView;
     RecfindAdapter recfindAdapter ;
     private MediaType MEDIA_TYPE_JSON;
-    List<FindBean.DataBean.RecordsBean> mNewsList = new ArrayList<>();
 
     App app=new App();
     private String appId = app.getAppId();
@@ -54,7 +53,6 @@ public class browseFragment extends Fragment {
 
     private SharedPreferences sharedPreferences;
     private UserInfoSPTool usp ;
-
 
 
     String userId;
@@ -162,7 +160,6 @@ public class browseFragment extends Fragment {
                 }
             }
         });
-
     }
 
     private void GetUserId() {

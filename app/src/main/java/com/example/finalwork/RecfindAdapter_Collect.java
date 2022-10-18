@@ -67,8 +67,6 @@ public class RecfindAdapter_Collect extends RecyclerView.Adapter<RecfindAdapter_
     String collectId;
     String usename;
 
-    DefultBean defultBean;
-
     int temp_like = -10, temp_collect = -10;
 
 

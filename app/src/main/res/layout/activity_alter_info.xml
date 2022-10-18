@@ -27,7 +27,7 @@
                 android:layout_height="42dp"
                 android:layout_marginLeft="160dp"
                 android:layout_marginTop="70dp"
-                android:background="@drawable/circle"
+                android:background="@drawable/bg_fmain"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_baseline_add_24" />
         </FrameLayout>

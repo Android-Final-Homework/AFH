@@ -24,11 +24,9 @@ import java.util.List;
 
 public class userwindomActivity extends AppCompatActivity {
 
-
         private BottomNavigationView bottomNav;
         private ViewPager viewPager;
         private LoginBean loginBean;
-
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +36,6 @@ public class userwindomActivity extends AppCompatActivity {
             setContentView(R.layout.activity_userwindom);
             viewPager=findViewById(R.id.viewPage);
             bottomNav=findViewById(R.id.nav_view);
-
-
 
             bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override

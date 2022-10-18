@@ -124,7 +124,6 @@ public class MyNews extends AppCompatActivity {
 
         userId = spFile.getString(userIdKey, null);
         Log.d("6666", "onActivityCreated: " + userId);
-
     }
 
 }

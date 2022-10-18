@@ -67,11 +67,6 @@ public class RecfindAdapter extends RecyclerView.Adapter<RecfindAdapter.ItemView
     String collectId;
     String usename;
 
-    DefultBean defultBean;
-
-    int temp_like = -10, temp_collect = -10;
-
-
     public RecfindAdapter(Context context, List<FindBean.DataBean.RecordsBean> showList, String userId) {
         this.context = context;
         this.showList = showList;

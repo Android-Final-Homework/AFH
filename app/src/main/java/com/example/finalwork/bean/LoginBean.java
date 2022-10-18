@@ -2,6 +2,7 @@ package com.example.finalwork.bean;
 
 import java.io.Serializable;
 
+//登陆信息
 public class LoginBean   implements  Serializable {
 
     private int code;

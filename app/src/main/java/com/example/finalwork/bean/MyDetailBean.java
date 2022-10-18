@@ -3,6 +3,7 @@ package com.example.finalwork.bean;
 import java.io.Serializable;
 import java.util.List;
 
+//用户信息
 public class MyDetailBean implements Serializable {
     private String userid;
     private String username;
@@ -12,10 +13,7 @@ public class MyDetailBean implements Serializable {
     private String useid;
     private String puserid;
 
-
-
     private String usename;
-
 
     private String title;
     private String User1;
@@ -23,15 +21,10 @@ public class MyDetailBean implements Serializable {
     private boolean hanfocus;
 
 
-
     private List<String> imageUrlList;
 
     public MyDetailBean(String userid,String shareid,List<String> imageUrlList,String content,String title, String puserid,Boolean hanfocus) {
         this.userid = userid;
-        //this.username = username;
-        //this.usersex = usersex;
-        //this.Userhead = Userhead;
-        //this.User1 = User1;
         this.shareid =shareid;
         this.imageUrlList=imageUrlList;
         this.content=content;

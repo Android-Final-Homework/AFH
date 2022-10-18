@@ -48,20 +48,14 @@ public class RecfindAdapter_focus extends RecyclerView.Adapter<RecfindAdapter_fo
     private static final int POST_UNCOLLECT = 5;
     private MediaType MEDIA_TYPE_JSON;
 
-
-    //李奋勇appid
-//    private String appId = "27fc6823aab44ec59a915c49c00c4b4b";
-//    private String appSecret = "466046abac4bdecfb4ee8ab60144d9c1add29";
-    //白洁appid
-    private String appId = "1368a1c2e1d248f69cc0a1e5c19164d3";
-    private String appSecret = "423255134eb1df0cc4d3ba2132dbe3a268711";
+    private String appId = "27fc6823aab44ec59a915c49c00c4b4b";
+    private String appSecret = "466046abac4bdecfb4ee8ab60144d9c1add29";
     private List<FindBean.DataBean.RecordsBean> showList = new ArrayList<>();
     String shareUserId1;
     String userId;
     String likeId;
     DefultBean defultBean;
     int temp_like = -10, temp_collect = -10;
-
 
 
     public RecfindAdapter_focus(Context context, List<FindBean.DataBean.RecordsBean> showList, String userId) {

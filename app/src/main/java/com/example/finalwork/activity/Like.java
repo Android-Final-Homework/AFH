@@ -40,7 +40,6 @@ public class Like extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
     RecyclerView mRecyclerView;
     RecfindAdapter_like recfindAdapter ;
-    private MediaType MEDIA_TYPE_JSON;
     String userId;
     private Headers headers;
     App app = new App();

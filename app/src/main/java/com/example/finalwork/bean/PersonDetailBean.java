@@ -2,6 +2,7 @@ package com.example.finalwork.bean;
 
 import java.util.List;
 
+//
 public class PersonDetailBean {
 
     private int code;

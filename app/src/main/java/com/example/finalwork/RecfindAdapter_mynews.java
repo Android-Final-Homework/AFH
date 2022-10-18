@@ -66,10 +66,7 @@ public class RecfindAdapter_mynews extends RecyclerView.Adapter<RecfindAdapter_m
     String collectId;
     String usename;
 
-    DefultBean defultBean;
-
     int temp_like = -10, temp_collect = -10;
-
 
     public RecfindAdapter_mynews(Context context, List<FindBean.DataBean.RecordsBean> showList, String userId) {
         this.context = context;
@@ -185,24 +182,14 @@ public class RecfindAdapter_mynews extends RecyclerView.Adapter<RecfindAdapter_m
                 List<String> list = null;
                 list = shows.getImageUrlList();
                 if (shows.getImageUrlList().size() != 0) {
-//                    for (int i = 0; i < shows.getImageUrlList().size(); i++) {
-//                        list.add(shows.getImageUrlList().get(i));
-//                    }
                     list = shows.getImageUrlList();
                 }
-                //MyDetailBean myDetailBean = new MyDetailBean(userId, shareUserId1, list);
 
                 Intent intent;//用户的数据
                 MyDetailBean mydetail = new MyDetailBean(userId, shareUserId1, list,holder.tvContent.getText().toString(),holder.tvTitle.getText().toString(),userId,shows.isHasFocus());
-//                mydetail.setUserid(userId);
-//                //mydetail.setUsername(usename);
-//                mydetail.setShareid(shareUserId1);
-//                mydetail.setImageUrlList(list);
+
                 intent = new Intent(context, PersonDetail.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putSerializable("detail", (Serializable)showList);//RecordsBean接口一定要实现Serializable！！！！！
-//                intent.putExtra("position",position+"");
-//                intent.putExtras(bundle);
+
                 intent.putExtra("detail", mydetail);
                 context.startActivity(intent);
             }
@@ -248,7 +235,6 @@ public class RecfindAdapter_mynews extends RecyclerView.Adapter<RecfindAdapter_m
         OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
         MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
         FormBody.Builder formBody = new FormBody.Builder();//创建表单请求体
-//        formBody.add("username","");//传递键值对参数
         Headers headers = new Headers.Builder()
                 .add("Accept", "application/json, text/plain, */*")
                 .add("appId", appId)

@@ -24,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
@@ -82,14 +83,14 @@ public class ChangeInfo extends AppCompatActivity {
     //是否拥有权限
     private boolean hasPermissions = false;
     //权限请求
-    //private RxPermissions rxPermissions;
+    private RxPermissions rxPermissions;
     User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_info);
-        //checkVersion();
+        checkVersion();
         requestManagerPermission();
         app = new App();
 
@@ -131,7 +132,7 @@ public class ChangeInfo extends AppCompatActivity {
                 usp.saveInfo(introduce,sex,userId,avatar,username);
             }
         });
-//1581091102155476992
+
         //添加更换头像的功能
         img.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -161,15 +162,6 @@ public class ChangeInfo extends AppCompatActivity {
                         openAlbum();
                         showMsg("打开相册");
                         bottomSheetDialog.cancel();
-//                        ImageView imgView = null;  //用于显示图片
-//                        //打开相册
-//                        Intent intent = new  Intent(Intent.ACTION_PICK);
-//                        //指定获取的是图片
-//                        intent.setType("image/*");
-//                        //startActivityForResult()方法有两个参数，第一个参数为Intent，第二个参数为自定义的一个请求码，这个请求码会在onActivityResult()方法中被返回。
-//                        startActivityForResult(intent, REQUEST_IMAGE_OPEN);
-//                        bottomSheetDialog.cancel();
-
                     }
                 });
                 //取消
@@ -228,8 +220,6 @@ public class ChangeInfo extends AppCompatActivity {
                     avatar_temp = uploadBean.getData().getImageUrlList().get(0);
                     System.out.println("avatar========="+avatar_temp);
                     user.setAvatar(avatar_temp);
-
-//                    handler.sendEmptyMessage(POST_FILE);
                 }
             }
         });
@@ -376,7 +366,7 @@ public class ChangeInfo extends AppCompatActivity {
     private void openAlbum() {
         if (!hasPermissions) {
             showMsg("未获取到权限");
-            //checkVersion();
+            checkVersion();
             return;
         }
         startActivityForResult(CameraUtils.getSelectPhotoIntent(), SELECT_PHOTO);
@@ -403,6 +393,8 @@ public class ChangeInfo extends AppCompatActivity {
      * 检查版本
      **/
     /**
+     * 检查版本
+     */
     @SuppressLint("CheckResult")
     private void checkVersion() {
         //Android6.0及以上版本
@@ -425,7 +417,6 @@ public class ChangeInfo extends AppCompatActivity {
             showMsg("无需请求动态权限");
         }
     }
-     **/
     /**
      * Toast提示
      *
