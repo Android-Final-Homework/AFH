@@ -11,8 +11,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+/*
+* 图片放大
+*
+* */
 public class DialogImage extends Dialog {
-
     public ImageView picture;
     private Bitmap btm;
     private Window window = null;
@@ -33,7 +36,14 @@ public class DialogImage extends Dialog {
         picture = view.findViewById(R.id.dialog_window_image);
         picture.setImageBitmap(btm);
 
+//        WindowManager wm = getWindow().getWindowManager();
+//        Display display = wm.getDefaultDisplay();
+//
+//        ViewGroup.LayoutParams vl = new ViewGroup.LayoutParams(display.getWidth(),display.getHeight());
+
         setContentView(view);
+//        getWindow().setLayout((ViewGroup.LayoutParams.MATCH_PARENT), ViewGroup.LayoutParams.MATCH_PARENT);
+
     }
 
     //窗口显示
@@ -64,4 +74,5 @@ public class DialogImage extends Dialog {
     public void dismiss(){
         super.dismiss();
     }
+
 }
