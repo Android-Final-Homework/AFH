@@ -519,7 +519,7 @@ public class publishFragment extends Fragment implements View.OnClickListener {
                 .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
                 .thumbnailScale(0.85f)
                 .showPreview(false)
-                .theme(R.style.Matisse_Zhihu)
+                .theme(com.zhihu.matisse.R.style.Matisse_Zhihu)
                 //Glide加载方式
                 .imageEngine(new GlideEngine())
                 .forResult(REQUEST_CODE_CHOOSE);
