@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F8F7F7"
-    tools:context="com.example.photoshare.fragment.PersonalCentelFragment">
+    tools:context="com.example.finalwork.fragment.PersonalCentelFragment">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"

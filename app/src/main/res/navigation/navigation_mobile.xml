@@ -6,16 +6,16 @@
     app:startDestination="@id/navigation_one">
     <fragment
         android:id="@+id/navigation_one"
-        android:name="com.example.photoshare.fragment.browseFragment"
+        android:name="com.example.finalwork.fragment.browseFragment"
         tools:layout="@layout/activity_one"
         />
     <fragment
         android:id="@+id/navigation_two"
-        android:name="com.example.photoshare.fragment.publishFragment"
+        android:name="com.example.finalwork.fragment.publishFragment"
         tools:layout="@layout/activity_two"/>
     <fragment
         android:id="@+id/navigation_three"
-        android:name="com.example.photoshare.fragment.PersonalCentelFragment"
+        android:name="com.example.finalwork.fragment.PersonalCentelFragment"
         tools:layout="@layout/activity_three"/>
 
 </navigation>

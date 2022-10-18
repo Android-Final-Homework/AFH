@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.photoshare">
+    package="com.example.finalwork">
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 相机权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -26,9 +26,9 @@
         android:theme="@style/Theme.PHOTOSHARE"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".activity.userwindomActivity" />
+        <activity android:name="com.example.finalwork.activity.userwindomActivity" />
 
-        <activity android:name=".activity.EnterPageActivity"
+        <activity android:name="com.example.finalwork.activity.EnterPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,14 +36,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity"/>
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.focus" />
-        <activity android:name=".activity.PersonDetail" />
-        <activity android:name=".activity.Like" />
-        <activity android:name=".ChangeInfo" />
-        <activity android:name=".activity.myCollect" />
-        <activity android:name=".activity.MyNews" />
+        <activity android:name="com.example.finalwork.activity.LoginActivity"/>
+        <activity android:name="com.example.finalwork.activity.RegisterActivity" />
+        <activity android:name="com.example.finalwork.activity.focus" />
+        <activity android:name="com.example.finalwork.activity.PersonDetail" />
+        <activity android:name="com.example.finalwork.activity.Like" />
+        <activity android:name="com.example.finalwork.ChangeInfo" />
+        <activity android:name="com.example.finalwork.activity.myCollect" />
+        <activity android:name="com.example.finalwork.activity.MyNews" />
 
     </application>
 

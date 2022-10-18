@@ -9,7 +9,7 @@
     android:paddingTop="1dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context="com.example.photoshare.fragment.publishFragment">
+    tools:context="com.example.finalwork.fragment.publishFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/detail_toolbar"
