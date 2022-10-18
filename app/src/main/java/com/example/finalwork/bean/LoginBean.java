@@ -1,6 +1,8 @@
 package com.example.finalwork.bean;
 
-public class LoginBean {
+import java.io.Serializable;
+
+public class LoginBean   implements  Serializable {
 
     private int code;
     private String msg;

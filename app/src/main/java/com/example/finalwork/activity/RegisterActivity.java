@@ -1,5 +1,8 @@
 package com.example.finalwork.activity;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.finalwork.R;
+import com.example.finalwork.Utils.App;
 import com.example.finalwork.bean.RegisterBean;
 import com.google.gson.Gson;
 
@@ -26,7 +27,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import cn.bmob.v3.datatype.BmobFile;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -40,15 +40,16 @@ public class RegisterActivity extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
     private static String TAG = "RegisterActivity";
     ImageView ivHeadPicture;
-    String headPicturePath;
     TextView tvNickname;
     TextView tvAccount;
     TextView tvPassword1;
     TextView tvPassword2;
-    BmobFile headPictureFile;
     private Handler handler;
-    private String appId = "27fc6823aab44ec59a915c49c00c4b4b";
-    private String appSecret = "466046abac4bdecfb4ee8ab60144d9c1add29";
+
+    App app=new App();
+    private String appId = app.getAppId();
+    private String appSecret = app.getAppSecret();
+
     private RegisterBean registerBean;
 
 
@@ -69,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         ivHeadPicture = findViewById(R.id.headpicture);
         Button btRegister = findViewById(R.id.regist);
 
+        //注册的子线程返回到主线程
         handler = new Handler(Looper.getMainLooper()){
             @SuppressLint("HandlerLeak")
             @Override
@@ -234,9 +236,10 @@ public class RegisterActivity extends AppCompatActivity {
         btRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tvAccount == null || tvAccount.getText().toString().isEmpty()) {
-                    Toast.makeText(RegisterActivity.this, "请输入账号！", Toast.LENGTH_SHORT).show();
-                } else if (tvNickname == null || tvNickname.getText().toString().isEmpty()) {
+//                if (tvAccount == null || tvAccount.getText().toString().isEmpty()) {
+//                    Toast.makeText(RegisterActivity.this, "请输入账号！", Toast.LENGTH_SHORT).show();
+//                } else
+                    if (tvNickname == null || tvNickname.getText().toString().isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "请输入昵称！", Toast.LENGTH_SHORT).show();
                 } else if (tvPassword1 == null || tvPassword1.getText().toString().isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "请输入密码！", Toast.LENGTH_SHORT).show();
@@ -246,7 +249,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "两次输入的密码不一致！", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.d(TAG, "onClick: 注册事件");
-                    postData3(tvAccount.getText().toString(), tvPassword1.getText().toString());
+                    postData3(tvNickname.getText().toString(), tvPassword1.getText().toString());
                 }
             }
 
@@ -256,47 +259,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-
-//    //上传图片到表中
-//    private void register(String imgpath) {
-//
-//        if (tvAccount == null || tvAccount.getText().toString().isEmpty()) {
-//            Toast.makeText(RegisterActivity.this, "请输入账号！", Toast.LENGTH_SHORT).show();
-//        } else if (tvNickname == null || tvNickname.getText().toString().isEmpty()) {
-//            Toast.makeText(RegisterActivity.this, "请输入昵称！", Toast.LENGTH_SHORT).show();
-//        } else if (tvPassword1 == null || tvPassword1.getText().toString().isEmpty()) {
-//            Toast.makeText(RegisterActivity.this, "请输入密码！", Toast.LENGTH_SHORT).show();
-//        } else if (tvPassword2 == null || tvPassword2.getText().toString().isEmpty()) {
-//            Toast.makeText(RegisterActivity.this, "请重复输入密码！", Toast.LENGTH_SHORT).show();
-//        } else if (!tvPassword1.getText().toString().equals(tvPassword2.getText().toString())) {
-//            Toast.makeText(RegisterActivity.this, "两次输入的密码不一致！", Toast.LENGTH_SHORT).show();
-//        } else {
-//
-//
-//            User user = new User();
-//            user.setUsername(tvAccount.getText().toString());
-//            user.setPassword(tvPassword1.getText().toString());
-//            user.setNickname(tvNickname.getText().toString());//当前的用户名
-//            user.setHeadpicture(headPictureFile);//该用户的头像图片
-//            user.signUp(new SaveListener<User>() {
-//
-//                @Override
-//                public void done(User user, BmobException e) {
-//
-//                    if (e == null) {
-//                        Toast.makeText(RegisterActivity.this, "注册成功!", Toast.LENGTH_SHORT).show();
-//                        postData3(tvAccount.getText().toString(),tvPassword1.getText().toString());
-//
-//                    } else {
-//                        Toast.makeText(RegisterActivity.this, "注册失败：" + e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//
-//
-//            });
-//        }
-//
-//    }
 
     private void postData3(String username,String password) {
         Gson gson = new Gson();
@@ -312,8 +274,8 @@ public class RegisterActivity extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
         Request request = new Request.Builder()//创建Request 对象。
                 .url("http://47.107.52.7:88/member/photo/user/register")
-                .addHeader("appId", "27fc6823aab44ec59a915c49c00c4b4b")
-                .addHeader("appSecret", "466046abac4bdecfb4ee8ab60144d9c1add29")
+                .addHeader("appId", appId)
+                .addHeader("appSecret", appSecret)
                 .addHeader("Content-Type","application/json")
                 .post(requestBody)//传递请求体
                 .build();
@@ -333,15 +295,13 @@ public class RegisterActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     Gson gson2 = new Gson();
                     registerBean = gson2.fromJson(response.body().string(),RegisterBean.class);
+                    //子线程返回数据到主线程
                     Message msg = new Message();
                     msg.obj = registerBean;
                     handler.sendMessage(msg);
                 }
             }
         });
-    }
-
-    private class Register {
     }
 }
 

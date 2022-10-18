@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_gravity="center"
-                android:src="@drawable/login_logo" />
+                android:src="@drawable/bg_fmain" />
 
         </LinearLayout>
 
@@ -44,7 +44,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/et_stely"
-                android:hint="账号"
+                android:hint="用户名"
                 android:maxLength="14"
                 android:paddingLeft="55dp"
                 android:paddingRight="60dp" />

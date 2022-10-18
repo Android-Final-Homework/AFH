@@ -19,8 +19,8 @@ public class EnterPageActivity extends AppCompatActivity {
         setContentView(R.layout.enter_page);
 
         tit = findViewById(R.id.enterTitle);
-        tit.setText("分享生活，"+"\n"+"     留住感动");
-        tit.setTextColor(Color.WHITE);
+        tit.setText("安卓Android");
+        tit.setTextColor(Color.BLACK);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
