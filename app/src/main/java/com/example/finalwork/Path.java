@@ -31,9 +31,11 @@ public class Path {
         if (context == null || imageUri == null) {
             return null;
         }
+
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             return getRealFilePath(context, imageUri);
         }
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.Q && DocumentsContract.isDocumentUri(context, imageUri)) {
             if (isExternalStorageDocument(imageUri)) {
                 String docId = DocumentsContract.getDocumentId(imageUri);
@@ -79,6 +81,7 @@ public class Path {
         }
         return null;
     }
+
     //此方法 只能用于4.4以下的版本
     private static String getRealFilePath(final Context context, final Uri uri) {
         if (null == uri) {
@@ -93,6 +96,7 @@ public class Path {
         } else if (ContentResolver.SCHEME_CONTENT.equals(scheme)) {
             String[] projection = {MediaStore.Images.ImageColumns.DATA};
             Cursor cursor = context.getContentResolver().query(uri, projection, null, null, null);
+
 //            Cursor cursor = context.getContentResolver().query(uri, new String[]{MediaStore.Images.ImageColumns.DATA}, null, null, null);
             if (null != cursor) {
                 if (cursor.moveToFirst()) {
@@ -106,6 +110,7 @@ public class Path {
         }
         return data;
     }
+
 
     /**
      * @param uri The Uri to check.
