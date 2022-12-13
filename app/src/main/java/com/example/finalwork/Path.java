@@ -65,10 +65,9 @@ public class Path {
                 return getDataColumn(context, contentUri, selection, selectionArgs);
             }
         } // MediaStore (and general)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
-            return uriToFileApiQ(context,imageUri);
-        }
-        else if ("content".equalsIgnoreCase(imageUri.getScheme())) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            return uriToFileApiQ(context, imageUri);
+        } else if ("content".equalsIgnoreCase(imageUri.getScheme())) {
             // Return the remote address
             if (isGooglePhotosUri(imageUri)) {
                 return imageUri.getLastPathSegment();
@@ -165,6 +164,7 @@ public class Path {
 
     /**
      * Android 10 以上适配 另一种写法
+     *
      * @param context
      * @param uri
      * @return
@@ -194,6 +194,7 @@ public class Path {
 
     /**
      * Android 10 以上适配
+     *
      * @param context
      * @param uri
      * @return

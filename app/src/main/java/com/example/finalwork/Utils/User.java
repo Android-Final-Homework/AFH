@@ -9,7 +9,7 @@ public class User extends Application {
     private String introduce;
     private String avatar;
 
-    public void setUserInfo(String introduce,int sex,String userId,String avatar,String username){
+    public void setUserInfo(String introduce, int sex, String userId, String avatar, String username) {
         setUsername(username);
         setUserId(userId);
         setAvatar(avatar);

@@ -31,6 +31,7 @@ public class CameraUtils {
 
     /**
      * 相机Intent
+     *
      * @param context
      * @param outputImagePath
      * @return
@@ -57,6 +58,7 @@ public class CameraUtils {
 
     /**
      * 相册Intent
+     *
      * @return
      */
     public static Intent getSelectPhotoIntent() {
@@ -118,6 +120,7 @@ public class CameraUtils {
 
     /**
      * 更改图片显示角度
+     *
      * @param filepath
      * @param orc_bitmap
      * @param iv
@@ -179,6 +182,7 @@ public class CameraUtils {
 
     /**
      * 比例压缩
+     *
      * @param image
      * @return
      */

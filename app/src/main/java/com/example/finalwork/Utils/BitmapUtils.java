@@ -1,7 +1,6 @@
 package com.example.finalwork.Utils;
 
 
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -66,10 +65,11 @@ public class BitmapUtils {
 
     /**
      * url转bitmap
+     *
      * @param url
      * @return
      */
-    public static Bitmap urlToBitmap(final String url){
+    public static Bitmap urlToBitmap(final String url) {
         final Bitmap[] bitmap = {null};
         new Thread(() -> {
             URL imageurl = null;
@@ -79,7 +79,7 @@ public class BitmapUtils {
                 e.printStackTrace();
             }
             try {
-                HttpURLConnection conn = (HttpURLConnection)imageurl.openConnection();
+                HttpURLConnection conn = (HttpURLConnection) imageurl.openConnection();
                 conn.setDoInput(true);
                 conn.connect();
                 InputStream is = conn.getInputStream();

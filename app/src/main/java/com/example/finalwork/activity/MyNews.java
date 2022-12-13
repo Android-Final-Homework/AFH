@@ -77,8 +77,9 @@ public class MyNews extends AppCompatActivity {
         });
 
 
+    }
 
-    }  private void browse(){
+    private void browse() {
         Log.d("try", "zxczxcc");
         OkHttpClient client = new OkHttpClient();//鍒涘缓OkHttpClient瀵硅薄銆�
         Request request = new Request.Builder()//鍒涘缓Request 瀵硅薄銆�
@@ -99,7 +100,7 @@ public class MyNews extends AppCompatActivity {
                     Gson gson2 = new Gson();
                     //Log.d("6666", "onResponse: " + response.body().string());
                     String a = response.body().string();
-                    Log.d("response:==========",a);
+                    Log.d("response:==========", a);
                     FindBean findBean = gson2.fromJson(a, FindBean.class);
                     List<FindBean.DataBean.RecordsBean> list = findBean.getData().getRecords();
                     recordslocalList.clear();
@@ -113,6 +114,7 @@ public class MyNews extends AppCompatActivity {
         });
 
     }
+
     private void GetUserId() {
         String spFileName = getResources()
                 .getString(R.string.shared_preferences_file_name);

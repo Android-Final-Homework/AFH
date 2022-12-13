@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation_mobile"
-    app:startDestination="@id/navigation_one">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation_mobile"
+            app:startDestination="@id/navigation_one">
     <fragment
-        android:id="@+id/navigation_one"
-        android:name="com.example.finalwork.fragment.browseFragment"
-        tools:layout="@layout/activity_one"
-        />
+            android:id="@+id/navigation_one"
+            android:name="com.example.finalwork.fragment.browseFragment"
+            tools:layout="@layout/activity_one"
+    />
     <fragment
-        android:id="@+id/navigation_two"
-        android:name="com.example.finalwork.fragment.publishFragment"
-        tools:layout="@layout/activity_two"/>
+            android:id="@+id/navigation_two"
+            android:name="com.example.finalwork.fragment.publishFragment"
+            tools:layout="@layout/activity_two"/>
     <fragment
-        android:id="@+id/navigation_three"
-        android:name="com.example.finalwork.fragment.PersonalCentelFragment"
-        tools:layout="@layout/activity_three"/>
+            android:id="@+id/navigation_three"
+            android:name="com.example.finalwork.fragment.PersonalCentelFragment"
+            tools:layout="@layout/activity_three"/>
 
 </navigation>

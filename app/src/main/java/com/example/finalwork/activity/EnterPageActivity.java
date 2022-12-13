@@ -14,6 +14,7 @@ import com.example.finalwork.R;
 public class EnterPageActivity extends AppCompatActivity {
 
     private TextView tit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

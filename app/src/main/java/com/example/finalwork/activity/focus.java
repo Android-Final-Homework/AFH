@@ -77,7 +77,9 @@ public class focus extends AppCompatActivity {
         });
 
 
-    }  private void browse(){
+    }
+
+    private void browse() {
         Log.d("try", "zxczxcc");
         OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
         Request request = new Request.Builder()//创建Request 对象。
@@ -110,6 +112,7 @@ public class focus extends AppCompatActivity {
         });
 
     }
+
     private void GetUserId() {
         String spFileName = getResources()
                 .getString(R.string.shared_preferences_file_name);

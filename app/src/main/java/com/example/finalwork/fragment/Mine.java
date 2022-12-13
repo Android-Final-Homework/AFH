@@ -60,23 +60,14 @@ public class Mine extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if(getActivity().getApplication()==null)
-//        {
-//            Log.d("e","aaaanull");
-//        }
         app = new App();
-
         sharedPreferences = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         userInfoSPTool = new UserInfoSPTool(sharedPreferences);
-
-//        sign_of_login = userInfoSPTool.isLogin();
-//        System.out.println(sign_of_login);
-
     }
 
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState){
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
 
-        View root = inflater.inflate(R.layout.navigation_mine,container,false);
+        View root = inflater.inflate(R.layout.navigation_mine, container, false);
 
         //获取控件
         avatar = root.findViewById(R.id.mine_avatar);
@@ -91,20 +82,9 @@ public class Mine extends Fragment {
         bt_mynews = root.findViewById(R.id.mine_mynews);
         initData();
 
-//        //点击头像，并通过判断是否已经为登录状态进行跳转
-//        并通过判断是否已经为登录状态进行跳转avatar.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                if(!sign_of_login){
-//                    Intent i = new Intent(getActivity(),Login.class);
-//                    startActivity(i);
-//                }
-//            }
-//        });
-
-        exit_login.setOnClickListener(new View.OnClickListener(){
+        exit_login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 userInfoSPTool.exitLogin();
                 initData();
                 Intent i = new Intent(getActivity(), LoginActivity.class);
@@ -112,40 +92,40 @@ public class Mine extends Fragment {
             }
         });
 
-        change_info.setOnClickListener(new View.OnClickListener(){
+        change_info.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent i = new Intent(getActivity(), ChangeInfo.class);
                 startActivity(i);
             }
         });
 
         //like
-        bt_like.setOnClickListener(new View.OnClickListener(){
+        bt_like.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
 
-                    Intent i = new Intent(getActivity(), Like.class);
-                    startActivity(i);
+                Intent i = new Intent(getActivity(), Like.class);
+                startActivity(i);
 
             }
         });
         //collect
-        bt_collect.setOnClickListener(new View.OnClickListener(){
+        bt_collect.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                    Intent i = new Intent(getActivity(), myCollect.class);
-                    startActivity(i);
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), myCollect.class);
+                startActivity(i);
             }
         });
 
         //packup
-        bt_focus.setOnClickListener(new View.OnClickListener(){
+        bt_focus.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
 
-                    Intent i = new Intent(getActivity(), focus.class);
-                    startActivity(i);
+                Intent i = new Intent(getActivity(), focus.class);
+                startActivity(i);
 
 
             }
@@ -160,28 +140,28 @@ public class Mine extends Fragment {
         return root;
     }
 
-    private void initData(){
+    private void initData() {
         sign_of_login = userInfoSPTool.isLogin();
-            userId = userInfoSPTool.getUserId();
-            System.out.println(userId);
-            User user = userInfoSPTool.getInfo();
-            String sign_of_sex;
-            switch (user.getSex()){
-                case 1:
-                    sign_of_sex = app.getSex_1();
-                    break;
-                case 2:
-                    sign_of_sex = app.getSex_2();
-                    break;
-                default:
-                    sign_of_sex = app.getSex_0();
-            }
-            Picasso.get().load(user.getAvatar()).into(avatar);
-            Picasso.get().load(sign_of_sex).into(sex);
-            username.setText(user.getUsername());
-            introduce.setText(user.getIntroduce());
-            exit_login.setVisibility(View.VISIBLE);
-            change_info.setVisibility(View.VISIBLE);
+        userId = userInfoSPTool.getUserId();
+        System.out.println(userId);
+        User user = userInfoSPTool.getInfo();
+        String sign_of_sex;
+        switch (user.getSex()) {
+            case 1:
+                sign_of_sex = app.getSex_1();
+                break;
+            case 2:
+                sign_of_sex = app.getSex_2();
+                break;
+            default:
+                sign_of_sex = app.getSex_0();
+        }
+        Picasso.get().load(user.getAvatar()).into(avatar);
+        Picasso.get().load(sign_of_sex).into(sex);
+        username.setText(user.getUsername());
+        introduce.setText(user.getIntroduce());
+        exit_login.setVisibility(View.VISIBLE);
+        change_info.setVisibility(View.VISIBLE);
     }
 
 }

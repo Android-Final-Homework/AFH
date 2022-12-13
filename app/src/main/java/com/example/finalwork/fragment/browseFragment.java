@@ -44,15 +44,15 @@ import okhttp3.Response;
 public class browseFragment extends Fragment {
     FloatingActionButton floatingActionButton;
     RecyclerView mRecyclerView;
-    RecfindAdapter recfindAdapter ;
+    RecfindAdapter recfindAdapter;
     private MediaType MEDIA_TYPE_JSON;
 
-    App app=new App();
+    App app = new App();
     private String appId = app.getAppId();
     private String appSecret = app.getAppSecret();
 
     private SharedPreferences sharedPreferences;
-    private UserInfoSPTool usp ;
+    private UserInfoSPTool usp;
 
 
     String userId;
@@ -66,7 +66,8 @@ public class browseFragment extends Fragment {
     private String mParam2;
     private Headers headers;
     private ArrayList<FindBean.DataBean.RecordsBean> recordslocalList = new ArrayList<>();
-    public browseFragment(){
+
+    public browseFragment() {
 
     }
 
@@ -93,29 +94,29 @@ public class browseFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        sharedPreferences = getActivity().getSharedPreferences("userInfo",MODE_PRIVATE);
+        sharedPreferences = getActivity().getSharedPreferences("userInfo", MODE_PRIVATE);
         usp = new UserInfoSPTool(sharedPreferences);
-        User user=usp.getInfo();
-        Log.d("6666", "onCreate111: "+user.getUserId().toString());
+        User user = usp.getInfo();
+        Log.d("6666", "onCreate111: " + user.getUserId().toString());
 
 
         MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
         headers = new Headers.Builder()
                 .add("appId", appId)
                 .add("appSecret", appSecret)
-                .add("Content-Type","application/json")
+                .add("Content-Type", "application/json")
                 .build();
 
         GetUserId();
     }
 
-    public View onCreateView(@Nullable LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
-        View root=inflater.inflate(R.layout.activity_browse,container,false);
+    public View onCreateView(@Nullable LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.activity_browse, container, false);
         GetUserId();
         browse();
-        floatingActionButton=root.findViewById(R.id.floatingActionButton);
+        floatingActionButton = root.findViewById(R.id.floatingActionButton);
 
-        recfindAdapter = new RecfindAdapter(getContext(),recordslocalList,userId);
+        recfindAdapter = new RecfindAdapter(getContext(), recordslocalList, userId);
         mRecyclerView = root.findViewById(R.id.recylerview);
         mRecyclerView.setAdapter(recfindAdapter);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
@@ -124,7 +125,7 @@ public class browseFragment extends Fragment {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(),"刷新列表...",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "刷新列表...", Toast.LENGTH_LONG).show();
                 browse();
             }
         });
@@ -134,7 +135,7 @@ public class browseFragment extends Fragment {
     private void browse() {
         OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
         Request request = new Request.Builder()//创建Request 对象。
-                .url("http://47.107.52.7:88/member/photo/share?size=100&userId="+userId)
+                .url("http://47.107.52.7:88/member/photo/share?size=100&userId=" + userId)
                 .headers(headers)
                 .build();
 
@@ -150,7 +151,7 @@ public class browseFragment extends Fragment {
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     Gson gson2 = new Gson();
                     //Log.d("6666", "onResponse: " + response.body().string());
-                    FindBean findBean = gson2.fromJson(response.body().string(),FindBean.class);
+                    FindBean findBean = gson2.fromJson(response.body().string(), FindBean.class);
                     List<FindBean.DataBean.RecordsBean> list = findBean.getData().getRecords();
                     recordslocalList.clear();
                     recordslocalList.addAll(list);

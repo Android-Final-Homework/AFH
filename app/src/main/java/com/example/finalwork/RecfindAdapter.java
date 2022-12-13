@@ -203,7 +203,7 @@ public class RecfindAdapter extends RecyclerView.Adapter<RecfindAdapter.ItemView
                 //MyDetailBean myDetailBean = new MyDetailBean(userId, shareUserId1, list,con);
 
                 Intent intent;//用户的数据
-                MyDetailBean mydetail = new MyDetailBean(userId, shareUserId1, list,holder.tvContent.getText().toString(),holder.tvTitle.getText().toString(),shows.getPUserId(),shows.isHasFocus());
+                MyDetailBean mydetail = new MyDetailBean(userId, shareUserId1, list, holder.tvContent.getText().toString(), holder.tvTitle.getText().toString(), shows.getPUserId(), shows.isHasFocus());
 //                mydetail.setUserid(userId);
 //                //mydetail.setUsername(usename);
 //                mydetail.setShareid(shareUserId1);
@@ -332,7 +332,7 @@ public class RecfindAdapter extends RecyclerView.Adapter<RecfindAdapter.ItemView
                     //Gson gson2 = new Gson();
                     //defultBean = gson2.fromJson(response.body().string(), DefultBean.class);
 
-                    Log.d("6666", "onResponse: 收藏上传"+response.body().string());
+                    Log.d("6666", "onResponse: 收藏上传" + response.body().string());
 
                     handler.sendEmptyMessage(POST_COLLECT);
                 }
@@ -369,7 +369,7 @@ public class RecfindAdapter extends RecyclerView.Adapter<RecfindAdapter.ItemView
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     //Gson gson2 = new Gson();
                     //defultBean = gson2.fromJson(response.body().string(), DefultBean.class);
-                    Log.d("6666", "onResponse: "+response.body().string());
+                    Log.d("6666", "onResponse: " + response.body().string());
                     Log.d("6666", "onResponse: 取消收藏");
 
                     handler.sendEmptyMessage(POST_UNCOLLECT);
@@ -378,7 +378,6 @@ public class RecfindAdapter extends RecyclerView.Adapter<RecfindAdapter.ItemView
         });
 
     }
-
 
 
     private void browse(int i) {
@@ -463,7 +462,7 @@ public class RecfindAdapter extends RecyclerView.Adapter<RecfindAdapter.ItemView
             this.ivLike = itemView.findViewById(R.id.iv_like);
             this.tvCollectNum = itemView.findViewById(R.id.tv_collects);
             this.ivCollect = itemView.findViewById(R.id.iv_collect);
-            this.ivShare=itemView.findViewById(R.id.iv_share);
+            this.ivShare = itemView.findViewById(R.id.iv_share);
 
             this.adapter = adapter;
 
@@ -485,8 +484,6 @@ public class RecfindAdapter extends RecyclerView.Adapter<RecfindAdapter.ItemView
         return sdf.format(new Date(Long.valueOf(seconds.substring(0, seconds.length() - 3) + "000")));
         //return sdf.format(new Date(Long.valueOf(seconds)));
     }
-
-
 
 
 }

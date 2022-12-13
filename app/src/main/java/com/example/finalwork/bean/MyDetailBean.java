@@ -23,15 +23,16 @@ public class MyDetailBean implements Serializable {
 
     private List<String> imageUrlList;
 
-    public MyDetailBean(String userid,String shareid,List<String> imageUrlList,String content,String title, String puserid,Boolean hanfocus) {
+    public MyDetailBean(String userid, String shareid, List<String> imageUrlList, String content, String title, String puserid, Boolean hanfocus) {
         this.userid = userid;
-        this.shareid =shareid;
-        this.imageUrlList=imageUrlList;
-        this.content=content;
-        this.title=title;
-        this.puserid =puserid;
-        this.hanfocus=isHanfocus();
+        this.shareid = shareid;
+        this.imageUrlList = imageUrlList;
+        this.content = content;
+        this.title = title;
+        this.puserid = puserid;
+        this.hanfocus = isHanfocus();
     }
+
     public boolean isHanfocus() {
         return hanfocus;
     }
@@ -39,6 +40,7 @@ public class MyDetailBean implements Serializable {
     public void setHanfocus(boolean hanfocus) {
         this.hanfocus = hanfocus;
     }
+
     public String getPuserid() {
         return puserid;
     }
@@ -46,6 +48,7 @@ public class MyDetailBean implements Serializable {
     public void setPuserid(String puserid) {
         this.puserid = puserid;
     }
+
     public String getUsename() {
         return usename;
     }
@@ -61,6 +64,7 @@ public class MyDetailBean implements Serializable {
     public void setUseid(String useid) {
         this.useid = useid;
     }
+
     public String getContent() {
         return content;
     }
@@ -76,6 +80,7 @@ public class MyDetailBean implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public MyDetailBean() {
 
     }
