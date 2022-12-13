@@ -72,7 +72,7 @@ public class FindBean implements Serializable {
             this.current = current;
         }
 
-        public static class RecordsBean implements Serializable{
+        public static class RecordsBean implements Serializable {
             private String id;
             private String pUserId;
             private String imageCode;

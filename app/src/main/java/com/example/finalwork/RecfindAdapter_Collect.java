@@ -110,7 +110,7 @@ public class RecfindAdapter_Collect extends RecyclerView.Adapter<RecfindAdapter_
         holder.ivCollect.setVisibility(View.INVISIBLE);//收藏
 
         holder.ivShare.setVisibility(View.INVISIBLE);
-        Log.d("6666", "onBindViewHolde改变数据: "+Integer.toString(shows.getCollectNum()));
+        Log.d("6666", "onBindViewHolde改变数据: " + Integer.toString(shows.getCollectNum()));
         shareUserId1 = showList.get(position).getId();
         likeId = (String) showList.get(position).getLikeId();
         usename = showList.get(position).getUsername();
@@ -193,7 +193,7 @@ public class RecfindAdapter_Collect extends RecyclerView.Adapter<RecfindAdapter_
                 //MyDetailBean myDetailBean = new MyDetailBean(userId, shareUserId1, list);
 
                 Intent intent;//用户的数据
-                MyDetailBean mydetail = new MyDetailBean(userId, shareUserId1, list,holder.tvContent.getText().toString(),holder.tvTitle.getText().toString(),userId,shows.isHasFocus());
+                MyDetailBean mydetail = new MyDetailBean(userId, shareUserId1, list, holder.tvContent.getText().toString(), holder.tvTitle.getText().toString(), userId, shows.isHasFocus());
 //                mydetail.setUserid(userId);
 //                //mydetail.setUsername(usename);
 //                mydetail.setShareid(shareUserId1);
@@ -241,7 +241,6 @@ public class RecfindAdapter_Collect extends RecyclerView.Adapter<RecfindAdapter_
             }
         }
     };
-
 
 
     private void PostLike() {
@@ -348,7 +347,7 @@ public class RecfindAdapter_Collect extends RecyclerView.Adapter<RecfindAdapter_
                     //Gson gson2 = new Gson();
                     //defultBean = gson2.fromJson(response.body().string(), DefultBean.class);
 
-                    Log.d("6666", "onResponse: 收藏上传"+response.body().string());
+                    Log.d("6666", "onResponse: 收藏上传" + response.body().string());
 
                     handler.sendEmptyMessage(POST_COLLECT);
                 }
@@ -385,7 +384,7 @@ public class RecfindAdapter_Collect extends RecyclerView.Adapter<RecfindAdapter_
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     //Gson gson2 = new Gson();
                     //defultBean = gson2.fromJson(response.body().string(), DefultBean.class);
-                    Log.d("6666", "onResponse: "+response.body().string());
+                    Log.d("6666", "onResponse: " + response.body().string());
                     Log.d("6666", "onResponse: 取消收藏");
 
                     handler.sendEmptyMessage(POST_UNCOLLECT);
@@ -394,7 +393,6 @@ public class RecfindAdapter_Collect extends RecyclerView.Adapter<RecfindAdapter_
         });
 
     }
-
 
 
     private void browse(int i) {
@@ -479,7 +477,7 @@ public class RecfindAdapter_Collect extends RecyclerView.Adapter<RecfindAdapter_
             this.ivLike = itemView.findViewById(R.id.iv_like);
             this.tvCollectNum = itemView.findViewById(R.id.tv_collects);
             this.ivCollect = itemView.findViewById(R.id.iv_collect);
-            this.ivShare=itemView.findViewById(R.id.iv_share);
+            this.ivShare = itemView.findViewById(R.id.iv_share);
 
             this.adapter = adapter;
 

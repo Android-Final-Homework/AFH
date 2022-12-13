@@ -43,24 +43,22 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-public class PersonDetail extends AppCompatActivity  {
+public class PersonDetail extends AppCompatActivity {
 
 
     private Banner mbanner;
 
-    App app=new App();
+    App app = new App();
     private String appId = app.getAppId();
     private String appSecret = app.getAppSecret();
 
     PersonDetailBean personDetailBean = null;
-    private  List<String> imgList;
+    private List<String> imgList;
     private String userId;
     private String puserId;
     private String focusUserId;
-    private String username;
-    private String shareId;
-    private String TEXT;
-    private TextView  detail_title, detail_content,detail_useid,detail_time;
+
+    private TextView detail_title, detail_content, detail_useid, detail_time;
     private ImageView user_name_detail;
     private MaterialButton btFocous;
     private ArrayList<String> list_title;
@@ -75,18 +73,17 @@ public class PersonDetail extends AppCompatActivity  {
                 detail_time.setText(timeStamp2Date(personDetailBean.getData().getCreateTime(), "yyyy-MM-dd"));
                 focusUserId = personDetailBean.getData().getPUserId();
 
-                if(personDetailBean.getData().isHasFocus())
+                if (personDetailBean.getData().isHasFocus())
                     btFocous.setText("取消关注");
                 else
                     btFocous.setText("+关注");
-            }
-            else if(msg.what==2){
-                if(btFocous.getText().toString()== "取消关注")
+            } else if (msg.what == 2) {
+                if (btFocous.getText().toString() == "取消关注")
                     btFocous.setText("+关注");
                 else
                     btFocous.setText("取消关注");
 
-                personDetailBean=null;
+                personDetailBean = null;
             }
         }
     };
@@ -100,27 +97,25 @@ public class PersonDetail extends AppCompatActivity  {
         MyDetailBean mydetail = (MyDetailBean) getIntent().getSerializableExtra("detail");
         userId = mydetail.getUserid();
         focusUserId = mydetail.getPuserid();
-        imgList=mydetail.getImageUrlList();
+        imgList = mydetail.getImageUrlList();
 
-        detail_content=findViewById(R.id.contentdetail);
-        user_name_detail=findViewById(R.id.iv_head1);
-        detail_useid=findViewById(R.id.username);
-        detail_title=findViewById(R.id.detail_title);
-        detail_time=findViewById(R.id.sharetime);
-        btFocous=findViewById(R.id.focus_button);
+        detail_content = findViewById(R.id.contentdetail);
+        user_name_detail = findViewById(R.id.iv_head1);
+        detail_useid = findViewById(R.id.username);
+        detail_title = findViewById(R.id.detail_title);
+        detail_time = findViewById(R.id.sharetime);
+        btFocous = findViewById(R.id.focus_button);
 
-        if(mydetail.isHanfocus())
+        if (mydetail.isHanfocus())
             btFocous.setText("取消关注");
         else
             btFocous.setText("+关注");
 
 
-        detail_useid.setText("id:"+mydetail.getPuserid());
-        detail_content.setText("    内容：\n\n"+"              "+mydetail.getContent());
+        detail_useid.setText("id:" + mydetail.getPuserid());
+        detail_content.setText("    内容：\n\n" + "              " + mydetail.getContent());
         detail_title.setText(mydetail.getTitle());
 
-
-        Log.d("6666", "onCreate: "+userId+" "+shareId);
         initView();
     }
 
@@ -128,7 +123,7 @@ public class PersonDetail extends AppCompatActivity  {
     private void initView() {
         mbanner = findViewById(R.id.banner);
         //设置mbanner设配器
-        mbanner.setAdapter(new mbanneradapter(PersonDetail.this,imgList));
+        mbanner.setAdapter(new mbanneradapter(PersonDetail.this, imgList));
 //是否允许自动轮播
         mbanner.isAutoLoop(true);
 //设置指示器， CircleIndicator为已经定义好的类，直接用就好
@@ -139,45 +134,14 @@ public class PersonDetail extends AppCompatActivity  {
         btFocous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("6666", "onClick: "+btFocous.getText().toString());
-                if(btFocous.getText().toString().equals("+关注"))
+                Log.d("6666", "onClick: " + btFocous.getText().toString());
+                if (btFocous.getText().toString().equals("+关注"))
                     PostFocus();
                 else
                     PostUnFocus();
             }
         });
     }
-
-
-    public void GetCommandDetails() {
-        OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
-        Headers headers = new Headers.Builder()
-                .add("Accept", "application/json, text/plain, */*")
-                .add("appId", appId)
-                .add("appSecret", appSecret)
-                .add("Content-Type", "application/json")
-                .build();
-        Request request = new Request.Builder()//创建Request 对象。
-                .url("http://47.107.52.7:88/member/photo/comment/first?shareId=" + shareId )
-                .headers(headers)
-                .build();
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.d("6666", "onFailure: ");
-            }
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {//回调的方法执行在子线程。
-                    Gson gson2 = new Gson();
-                    //commentBean = gson2.fromJson(response.body().string(), CommentBean.class);
-                    Log.d("6666", "onResponse: "+response.body().string());
-                    handler.sendEmptyMessage(3);
-                }
-            }
-        });
-    }
-
 
     private void PostFocus() {
         OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
@@ -272,6 +236,7 @@ public class PersonDetail extends AppCompatActivity  {
         super.onStart();
         mbanner.start();
     }
+
     public static String timeStamp2Date(String seconds, String format) {
         if (seconds == null || seconds.isEmpty() || seconds.equals("null")) {
             return "";

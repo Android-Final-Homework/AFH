@@ -36,7 +36,7 @@ import okhttp3.Response;
 public class myCollect extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
     RecyclerView mRecyclerView;
-    RecfindAdapter_Collect recfindAdapter ;
+    RecfindAdapter_Collect recfindAdapter;
     private MediaType MEDIA_TYPE_JSON;
     String userId;
     private Headers headers;
@@ -59,12 +59,12 @@ public class myCollect extends AppCompatActivity {
         headers = new Headers.Builder()
                 .add("appId", app.getAppId())
                 .add("appSecret", app.getAppSecret())
-                .add("Content-Type","application/json")
+                .add("Content-Type", "application/json")
                 .build();
         GetUserId();
         browse();
-        floatingActionButton=findViewById(R.id.floatingActionButton_collect);
-        recfindAdapter = new RecfindAdapter_Collect(this,recordslocalList,userId);
+        floatingActionButton = findViewById(R.id.floatingActionButton_collect);
+        recfindAdapter = new RecfindAdapter_Collect(this, recordslocalList, userId);
         mRecyclerView = findViewById(R.id.recylerview_collect);
         mRecyclerView.setAdapter(recfindAdapter);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
@@ -79,10 +79,10 @@ public class myCollect extends AppCompatActivity {
     }
 
     private void browse() {
-        Log.d("try","zxczxcc");
+        Log.d("try", "zxczxcc");
         OkHttpClient client = new OkHttpClient();//鍒涘缓OkHttpClient瀵硅薄銆�
         Request request = new Request.Builder()//鍒涘缓Request 瀵硅薄銆�
-                .url("http://47.107.52.7:88/member/photo/collect?userId="+userId)
+                .url("http://47.107.52.7:88/member/photo/collect?userId=" + userId)
                 .headers(headers)
                 .build();
 
@@ -98,11 +98,11 @@ public class myCollect extends AppCompatActivity {
                 if (response.isSuccessful()) {//鍥炶皟鐨勬柟娉曟墽琛屽湪瀛愮嚎绋嬨€�
                     Gson gson2 = new Gson();
                     //Log.d("6666", "onResponse: " + response.body().string());
-                    findBean = gson2.fromJson(response.body().string(),FindBean.class);
+                    findBean = gson2.fromJson(response.body().string(), FindBean.class);
                     list = findBean.getData().getRecords();
                     recordslocalList.clear();
                     recordslocalList.addAll(list);
-                    System.out.println("list="+findBean.getData().getRecords().get(0).getCollectNum());
+                    System.out.println("list=" + findBean.getData().getRecords().get(0).getCollectNum());
                     Message msg = new Message();
                     msg.obj = list;
                     handler.sendMessage(msg);
@@ -111,6 +111,7 @@ public class myCollect extends AppCompatActivity {
         });
 
     }
+
     private void GetUserId() {
         String spFileName = getResources()
                 .getString(R.string.shared_preferences_file_name);

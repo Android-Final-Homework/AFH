@@ -1,4 +1,5 @@
 package com.example.finalwork;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -22,7 +23,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class mbanneradapter extends BannerAdapter<String,mbanneradapter.mbannerholder> {
+public class mbanneradapter extends BannerAdapter<String, mbanneradapter.mbannerholder> {
     Context context;
 
     /**
@@ -110,7 +111,6 @@ public class mbanneradapter extends BannerAdapter<String,mbanneradapter.mbannerh
                 }).start();
             }
         });
-
 
 
     }

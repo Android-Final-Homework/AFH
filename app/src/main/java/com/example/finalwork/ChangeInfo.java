@@ -61,7 +61,7 @@ public class ChangeInfo extends AppCompatActivity {
     private App app;
     private static final int POST_FILE = 0;
 
-    private File file ;
+    private File file;
     private SharedPreferences sharedPreferences;
     private UserInfoSPTool usp;
     private Handler handler;
@@ -94,7 +94,7 @@ public class ChangeInfo extends AppCompatActivity {
         requestManagerPermission();
         app = new App();
 
-        sharedPreferences = getSharedPreferences("userInfo",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("userInfo", MODE_PRIVATE);
         usp = new UserInfoSPTool(sharedPreferences);
 
         //隐藏标题栏
@@ -111,32 +111,32 @@ public class ChangeInfo extends AppCompatActivity {
         user = usp.getInfo();
         Picasso.get().load(user.getAvatar()).into(img);
         text1.setText(user.getUserId());
-        text2.setText(user.getSex()+"");
+        text2.setText(user.getSex() + "");
         text3.setText(user.getIntroduce());
         text4.setText(user.getUsername());
 
         //跟新用户信息
         Button btn = findViewById(R.id.change_save);
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 user.setAvatar(avatar_temp);
                 String introduce = text3.getText().toString();
                 int sex = Integer.parseInt(text2.getText().toString());
                 String userId = text1.getText().toString();
 
                 String avatar = user.getAvatar();
-                System.out.println("avater==================="+avatar);
+                System.out.println("avater===================" + avatar);
                 String username = text4.getText().toString();
-                post(introduce,sex,userId,avatar,username);
-                usp.saveInfo(introduce,sex,userId,avatar,username);
+                post(introduce, sex, userId, avatar, username);
+                usp.saveInfo(introduce, sex, userId, avatar, username);
             }
         });
 
         //添加更换头像的功能
-        img.setOnClickListener(new View.OnClickListener(){
+        img.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
 
 
                 bottomSheetDialog = new BottomSheetDialog(view.getContext());
@@ -173,6 +173,7 @@ public class ChangeInfo extends AppCompatActivity {
             }
         });
     }
+
     private void postfile() {
         Headers headers = new Headers.Builder()
                 .add("appId", app.getAppId())
@@ -218,14 +219,14 @@ public class ChangeInfo extends AppCompatActivity {
 //                    handler.sendMessage(msg);
 
                     avatar_temp = uploadBean.getData().getImageUrlList().get(0);
-                    System.out.println("avatar========="+avatar_temp);
+                    System.out.println("avatar=========" + avatar_temp);
                     user.setAvatar(avatar_temp);
                 }
             }
         });
     }
 
-    private void post(String introduce,int sex,String userId,String avatar,String username){
+    private void post(String introduce, int sex, String userId, String avatar, String username) {
         new Thread(() -> {
 
             // url路径
@@ -263,7 +264,7 @@ public class ChangeInfo extends AppCompatActivity {
                 OkHttpClient client = new OkHttpClient();
                 //发起请求，传入callback进行回调
                 client.newCall(request).enqueue(callback);
-            }catch (NetworkOnMainThreadException ex){
+            } catch (NetworkOnMainThreadException ex) {
                 ex.printStackTrace();
             }
         }).start();
@@ -278,20 +279,20 @@ public class ChangeInfo extends AppCompatActivity {
             //TODO 请求失败处理
             e.printStackTrace();
         }
+
         @Override
         public void onResponse(@NonNull Call call, Response response) throws IOException {
             //TODO 请求成功处理
             String responseData = response.body().string();
             System.out.println(responseData);
             int code = JSONObject.parseObject(responseData).getInteger("code");
-            if(code == 200){
+            if (code == 200) {
                 Looper.prepare();
-                Toast.makeText(ChangeInfo.this,"修改成功",Toast.LENGTH_LONG).show();
+                Toast.makeText(ChangeInfo.this, "修改成功", Toast.LENGTH_LONG).show();
                 Looper.loop();
-            }
-            else{
+            } else {
                 Looper.prepare();
-                Toast.makeText(ChangeInfo.this,"修改失败",Toast.LENGTH_LONG).show();
+                Toast.makeText(ChangeInfo.this, "修改失败", Toast.LENGTH_LONG).show();
                 Looper.loop();
             }
         }
@@ -319,11 +320,11 @@ public class ChangeInfo extends AppCompatActivity {
                 if (resultCode == RESULT_OK) {
                     //显示图片
 //                    displayImage(outputImagePath.getAbsolutePath());
-                    System.out.println("Path:"+outputImagePath.getAbsolutePath());
+                    System.out.println("Path:" + outputImagePath.getAbsolutePath());
                     file = new File(outputImagePath.getAbsolutePath());
-                    if(cheak()){
+                    if (cheak()) {
                         postfile();
-                    }else {
+                    } else {
                         System.out.println("image == null ");
                     }
                 }
@@ -331,7 +332,7 @@ public class ChangeInfo extends AppCompatActivity {
             //打开相册后返回
             case SELECT_PHOTO:
                 if (resultCode == RESULT_OK) {
-                    String imagePath ;
+                    String imagePath;
                     //判断手机系统版本号
                     if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
                         //4.4及以上系统使用这个方法处理图片
@@ -339,7 +340,7 @@ public class ChangeInfo extends AppCompatActivity {
                     } else {
                         imagePath = CameraUtils.getImageBeforeKitKatPath(data, this);
                     }
-                    System.out.println("aaPath:"+imagePath);
+                    System.out.println("aaPath:" + imagePath);
                     file = new File(imagePath);
 //                    if(file==null)
 //                    {
@@ -348,9 +349,9 @@ public class ChangeInfo extends AppCompatActivity {
 //                    {
 //                        System.out.println("file != null");
 //                    }
-                    if(cheak()){
+                    if (cheak()) {
                         postfile();
-                    }else {
+                    } else {
                         System.out.println("image == null ");
                     }
                 }
@@ -371,6 +372,7 @@ public class ChangeInfo extends AppCompatActivity {
         }
         startActivityForResult(CameraUtils.getSelectPhotoIntent(), SELECT_PHOTO);
     }
+
     /**
      * 拍照
      */
@@ -417,6 +419,7 @@ public class ChangeInfo extends AppCompatActivity {
             showMsg("无需请求动态权限");
         }
     }
+
     /**
      * Toast提示
      *
@@ -425,8 +428,9 @@ public class ChangeInfo extends AppCompatActivity {
     private void showMsg(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
+
     private boolean cheak() {
-        if (file==null)
+        if (file == null)
             return false;
         return true;
     }

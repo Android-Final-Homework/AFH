@@ -35,11 +35,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-
 public class Like extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
     RecyclerView mRecyclerView;
-    RecfindAdapter_like recfindAdapter ;
+    RecfindAdapter_like recfindAdapter;
     String userId;
     private Headers headers;
     App app = new App();
@@ -60,12 +59,12 @@ public class Like extends AppCompatActivity {
         headers = new Headers.Builder()
                 .add("appId", app.getAppId())
                 .add("appSecret", app.getAppSecret())
-                .add("Content-Type","application/json")
+                .add("Content-Type", "application/json")
                 .build();
         GetUserId();
         browse();
-        floatingActionButton=findViewById(R.id.floatingActionButton_like);
-        recfindAdapter = new RecfindAdapter_like(this,recordslocalList,userId);
+        floatingActionButton = findViewById(R.id.floatingActionButton_like);
+        recfindAdapter = new RecfindAdapter_like(this, recordslocalList, userId);
         mRecyclerView = findViewById(R.id.recylerview_like);
         mRecyclerView.setAdapter(recfindAdapter);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
@@ -80,10 +79,10 @@ public class Like extends AppCompatActivity {
 
 
     private void browse() {
-        Log.d("try","zxczxcc");
+        Log.d("try", "zxczxcc");
         OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
         Request request = new Request.Builder()//创建Request 对象。
-                .url("http://47.107.52.7:88/member/photo/like?userId="+userId)
+                .url("http://47.107.52.7:88/member/photo/like?userId=" + userId)
                 .headers(headers)
                 .build();
 
@@ -99,11 +98,11 @@ public class Like extends AppCompatActivity {
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     Gson gson2 = new Gson();
                     //Log.d("6666", "onResponse: " + response.body().string());
-                    FindBean findBean = gson2.fromJson(response.body().string(),FindBean.class);
+                    FindBean findBean = gson2.fromJson(response.body().string(), FindBean.class);
                     List<FindBean.DataBean.RecordsBean> list = findBean.getData().getRecords();
                     recordslocalList.clear();
                     recordslocalList.addAll(list);
-                    System.out.println("list="+recordslocalList);
+                    System.out.println("list=" + recordslocalList);
                     Message msg = new Message();
                     msg.obj = list;
                     handler.sendMessage(msg);
@@ -112,6 +111,7 @@ public class Like extends AppCompatActivity {
         });
 
     }
+
     private void GetUserId() {
         String spFileName = getResources()
                 .getString(R.string.shared_preferences_file_name);

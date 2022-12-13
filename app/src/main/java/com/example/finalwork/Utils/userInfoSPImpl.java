@@ -3,7 +3,7 @@ package com.example.finalwork.Utils;
 public interface userInfoSPImpl {
 
     //保存登录信息
-    void saveInfo(String introduce,int sex,String userId,String avatar,String username);
+    void saveInfo(String introduce, int sex, String userId, String avatar, String username);
 
     //获取登录信息
     User getInfo();

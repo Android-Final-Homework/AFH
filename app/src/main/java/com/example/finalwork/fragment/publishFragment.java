@@ -77,7 +77,7 @@ public class publishFragment extends Fragment implements View.OnClickListener {
     private Handler handler;
     UploadBean uploadBean;
     FindBean findBean;
-    Button btSaveShare, btPostShare,btGetShare,btClear;
+    Button btSaveShare, btPostShare, btGetShare, btClear;
     String textsh;
     String texttitle;
 
@@ -90,14 +90,14 @@ public class publishFragment extends Fragment implements View.OnClickListener {
     private List<File> file = new ArrayList<>();
     String userId;
 
-    App app=new App();
+    App app = new App();
     private String appId = app.getAppId();
     private String appSecret = app.getAppSecret();
 
     DefultBean defultBean;
     private Headers headers;
     private List<FindBean.DataBean.RecordsBean> recordslocalList;
-    List<FindBean.DataBean.RecordsBean> list ;
+    List<FindBean.DataBean.RecordsBean> list;
 
 
     public View onCreateView(@Nullable LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -172,8 +172,8 @@ public class publishFragment extends Fragment implements View.OnClickListener {
                             edTextContent.setText(list.get(0).getContent());
                             edTextTitle.setText(list.get(0).getTitle());
                             Gson gson2 = new Gson();
-                            uploadBean=gson2.fromJson("{\"code\":200,\"msg\":\"成功\",\"data\":{\"imageCode\":\""+list.get(0).getImageCode()+"\",\"imageUrlList\":[\"null\"]}}", UploadBean.class);
-                            Log.d(TAG, "handleMessage图片码: "+uploadBean.getData().getImageCode());
+                            uploadBean = gson2.fromJson("{\"code\":200,\"msg\":\"成功\",\"data\":{\"imageCode\":\"" + list.get(0).getImageCode() + "\",\"imageUrlList\":[\"null\"]}}", UploadBean.class);
+                            Log.d(TAG, "handleMessage图片码: " + uploadBean.getData().getImageCode());
                             Toast.makeText(getActivity(), "同步成功", Toast.LENGTH_SHORT).show();
                         }
                         break;
@@ -277,7 +277,7 @@ public class publishFragment extends Fragment implements View.OnClickListener {
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     Log.d("66667", "onResponse:成功上传分享 ");
                     Gson gson2 = new Gson();
-                    defultBean = gson2.fromJson(response.body().string(),DefultBean.class);
+                    defultBean = gson2.fromJson(response.body().string(), DefultBean.class);
                     //Log.d(TAG, "onResponse: defultBean保存成功:" + response.body().string());
                     //子线程返回数据到主线程
 //                    Message msg = new Message();
@@ -367,10 +367,10 @@ public class publishFragment extends Fragment implements View.OnClickListener {
         headers = new Headers.Builder()
                 .add("appId", appId)
                 .add("appSecret", appSecret)
-                .add("Content-Type","application/json")
+                .add("Content-Type", "application/json")
                 .build();
         Request request = new Request.Builder()//创建Request 对象。
-                .url("http://47.107.52.7:88/member/photo/share/save?size=100&userId="+userId)
+                .url("http://47.107.52.7:88/member/photo/share/save?size=100&userId=" + userId)
                 .headers(headers)
                 .build();
 
@@ -386,11 +386,11 @@ public class publishFragment extends Fragment implements View.OnClickListener {
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     Gson gson2 = new Gson();
                     //Log.d("6666", "onResponse: " + response.body().string());
-                    findBean = gson2.fromJson(response.body().string(),FindBean.class);
+                    findBean = gson2.fromJson(response.body().string(), FindBean.class);
                     //Log.d(TAG, "onResponse: "+response.body().string());
                     list = findBean.getData().getRecords();
-                    Log.d(TAG, "onResponse:findBean.getData().getRecords().size() "+findBean.getData().getRecords().size());
-                    Log.d(TAG, "onResponse:list.size() "+list.size());
+                    Log.d(TAG, "onResponse:findBean.getData().getRecords().size() " + findBean.getData().getRecords().size());
+                    Log.d(TAG, "onResponse:list.size() " + list.size());
                     handler.sendEmptyMessage(GET_SAVE_SHARE);
                 }
             }
@@ -405,24 +405,21 @@ public class publishFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.clear:
                 editClear();
-                uploadBean=null;
+                uploadBean = null;
                 break;
             case R.id.saveShare:
-                if (cheak())
-                {
+                if (cheak()) {
                     postSaveShare();
                 } else {
                     Toast.makeText(getActivity(), "请填写完整的信息", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.shardup:
-                if(cheak()||uploadBean!=null)
-                {
+                if (cheak() || uploadBean != null) {
                     postShare();
                     editClear();
                     uploadBean = null;
-                }else
-                {
+                } else {
                     Toast.makeText(getActivity(), "请填写完整的信息", Toast.LENGTH_SHORT).show();
                 }
                 break;

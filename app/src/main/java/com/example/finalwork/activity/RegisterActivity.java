@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView tvPassword2;
     private Handler handler;
 
-    App app=new App();
+    App app = new App();
     private String appId = app.getAppId();
     private String appSecret = app.getAppSecret();
 
@@ -68,25 +68,22 @@ public class RegisterActivity extends AppCompatActivity {
         tvPassword2 = findViewById(R.id.password_2);
         ImageView ivPasswordClear2 = findViewById(R.id.password_clear_2);
         TextView tvPswTip = findViewById(R.id.psw_tip);
-        ivHeadPicture = findViewById(R.id.headpicture);
+        //ivHeadPicture = findViewById(R.id.headpicture);
         Button btRegister = findViewById(R.id.regist);
 
         //注册的子线程返回到主线程
-        handler = new Handler(Looper.getMainLooper()){
+        handler = new Handler(Looper.getMainLooper()) {
             @SuppressLint("HandlerLeak")
             @Override
             public void handleMessage(@NonNull Message msg) {
-                RegisterBean registerBean = (RegisterBean ) msg.obj;
-                if(registerBean.getCode()!=200)
-                {
-                    Toast.makeText(RegisterActivity.this, "注册失败！"+registerBean.getMsg(), Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                RegisterBean registerBean = (RegisterBean) msg.obj;
+                if (registerBean.getCode() != 200) {
+                    Toast.makeText(RegisterActivity.this, "注册失败！" + registerBean.getMsg(), Toast.LENGTH_SHORT).show();
+                } else {
                     Toast.makeText(RegisterActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
                     finish();
                 }
-                Intent intent1 = new Intent(RegisterActivity.this,LoginActivity.class);
+                Intent intent1 = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent1);
                 finish();
             }
@@ -240,7 +237,7 @@ public class RegisterActivity extends AppCompatActivity {
 //                if (tvAccount == null || tvAccount.getText().toString().isEmpty()) {
 //                    Toast.makeText(RegisterActivity.this, "请输入账号！", Toast.LENGTH_SHORT).show();
 //                } else
-                    if (tvNickname == null || tvNickname.getText().toString().isEmpty()) {
+                if (tvNickname == null || tvNickname.getText().toString().isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "请输入昵称！", Toast.LENGTH_SHORT).show();
                 } else if (tvPassword1 == null || tvPassword1.getText().toString().isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "请输入密码！", Toast.LENGTH_SHORT).show();
@@ -257,11 +254,10 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
-
     }
 
 
-    private void postData3(String username,String password) {
+    private void postData3(String username, String password) {
         Gson gson = new Gson();
         Map<String, Object> bodyMap = new HashMap<>();
         bodyMap.put("password", password);
@@ -277,7 +273,7 @@ public class RegisterActivity extends AppCompatActivity {
                 .url("http://47.107.52.7:88/member/photo/user/register")
                 .addHeader("appId", appId)
                 .addHeader("appSecret", appSecret)
-                .addHeader("Content-Type","application/json")
+                .addHeader("Content-Type", "application/json")
                 .post(requestBody)//传递请求体
                 .build();
 
@@ -295,7 +291,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.d("66667", "onResponse: " + response.code());
                 if (response.isSuccessful()) {//回调的方法执行在子线程。
                     Gson gson2 = new Gson();
-                    registerBean = gson2.fromJson(response.body().string(),RegisterBean.class);
+                    registerBean = gson2.fromJson(response.body().string(), RegisterBean.class);
                     //子线程返回数据到主线程
                     Message msg = new Message();
                     msg.obj = registerBean;

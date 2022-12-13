@@ -17,17 +17,17 @@ public class DialogImage extends Dialog {
     private Bitmap btm;
     private Window window = null;
 
-    public DialogImage(Context context, int x, int y, Bitmap bitmap){
+    public DialogImage(Context context, int x, int y, Bitmap bitmap) {
         super(context);
-        windowDeploy(x,y);
+        windowDeploy(x, y);
         btm = bitmap;
     }
 
-    public DialogImage(Context context){
+    public DialogImage(Context context) {
         super(context);
     }
 
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view = LayoutInflater.from(getContext()).inflate(R.layout.dialog_window, null);
         picture = view.findViewById(R.id.dialog_window_image);
@@ -37,9 +37,9 @@ public class DialogImage extends Dialog {
     }
 
     //窗口显示
-    public void windowDeploy(int x, int y){
+    public void windowDeploy(int x, int y) {
         window = getWindow();
-        window.getDecorView().setPadding(0,0,0,0);
+        window.getDecorView().setPadding(0, 0, 0, 0);
         window.setWindowAnimations(R.style.windowAnimation); //窗口弹出动画
 
         WindowManager.LayoutParams wml = window.getAttributes();
@@ -56,12 +56,12 @@ public class DialogImage extends Dialog {
     }
 
     @Override
-    public void show(){
+    public void show() {
         super.show();
 
     }
 
-    public void dismiss(){
+    public void dismiss() {
         super.dismiss();
     }
 }

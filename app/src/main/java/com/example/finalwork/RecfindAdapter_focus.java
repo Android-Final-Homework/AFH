@@ -357,7 +357,6 @@ public class RecfindAdapter_focus extends RecyclerView.Adapter<RecfindAdapter_fo
 //
 
 
-
     private void browse() {
 
         MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
@@ -439,7 +438,7 @@ public class RecfindAdapter_focus extends RecyclerView.Adapter<RecfindAdapter_fo
             this.ivLike = itemView.findViewById(R.id.iv_like);
             this.tvCollectNum = itemView.findViewById(R.id.tv_collects);
             this.ivCollect = itemView.findViewById(R.id.iv_collect);
-            this.ivShare=itemView.findViewById(R.id.iv_share);
+            this.ivShare = itemView.findViewById(R.id.iv_share);
 
             this.adapter = adapter;
 

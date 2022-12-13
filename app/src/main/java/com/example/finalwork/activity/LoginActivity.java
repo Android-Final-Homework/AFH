@@ -48,11 +48,11 @@ public class LoginActivity extends AppCompatActivity {
     private LoginBean loginBean;
     private Handler handler;
 
-    App app=new App();
+    App app = new App();
     private String appId = app.getAppId();
     private String appSecret = app.getAppSecret();
 
-    String introduce,avatar;
+    String introduce, avatar;
     int sex;
 
     //回调方法
@@ -167,7 +167,7 @@ public class LoginActivity extends AppCompatActivity {
                         etPassword.setTypeface(Typeface.DEFAULT);
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        Log.e("xxx","移动");
+                        Log.e("xxx", "移动");
                         break;
                 }
                 return true;
@@ -175,57 +175,54 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        handler=new Handler(Looper.getMainLooper())
-        {
+        handler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(@NonNull Message msg) {
-                if (loginBean.getCode()==200)
-                {
+                if (loginBean.getCode() == 200) {
                     //记住密码选项
                     SharedPreferences.Editor editor = spFile.edit();
-                editor.putString(useridKey, loginBean.getData().getId());
-                Log.d("6666", "handleMessage: userid:" + loginBean.getData().getId());
-                Log.d("6666", "handleMessage: userid:" + loginBean.getMsg());
-                //Log.d("6666", "handleMessage: userid:"+userid);
-                if (cbRememberPwd.isChecked()) {
-                    String password = etPassword.getText().toString();
-                    String account = etAccount.getText().toString();
+                    editor.putString(useridKey, loginBean.getData().getId());
+                    Log.d("6666", "handleMessage: userid:" + loginBean.getData().getId());
+                    Log.d("6666", "handleMessage: userid:" + loginBean.getMsg());
+                    //Log.d("6666", "handleMessage: userid:"+userid);
+                    if (cbRememberPwd.isChecked()) {
+                        String password = etPassword.getText().toString();
+                        String account = etAccount.getText().toString();
 
-                    editor.putString(accountKey, account);
-                    editor.putString(passwordKey, password);
-                    editor.putBoolean(rememberPasswordKey, true);
-                } else {
-                    editor.remove(accountKey);
-                    editor.remove(passwordKey);
-                    editor.remove(rememberPasswordKey);
-                }
-                UserInfoSPTool usp = new UserInfoSPTool(spFile);
-                App app = new App();
+                        editor.putString(accountKey, account);
+                        editor.putString(passwordKey, password);
+                        editor.putBoolean(rememberPasswordKey, true);
+                    } else {
+                        editor.remove(accountKey);
+                        editor.remove(passwordKey);
+                        editor.remove(rememberPasswordKey);
+                    }
+                    UserInfoSPTool usp = new UserInfoSPTool(spFile);
+                    App app = new App();
 
-                if (loginBean.getData().getIntroduce() != null)
-                    introduce = (String) loginBean.getData().getIntroduce();
-                else
-                    introduce = app.getDefaultIntroduce();
+                    if (loginBean.getData().getIntroduce() != null)
+                        introduce = (String) loginBean.getData().getIntroduce();
+                    else
+                        introduce = app.getDefaultIntroduce();
 
-                if (loginBean.getData().getAvatar() != null)
-                    avatar = (String) loginBean.getData().getAvatar();
-                else
-                    avatar = app.getDefaultAvatar();
+                    if (loginBean.getData().getAvatar() != null)
+                        avatar = (String) loginBean.getData().getAvatar();
+                    else
+                        avatar = app.getDefaultAvatar();
 
-                if (loginBean.getData().getSex() != null)
-                    sex = 1;
+                    if (loginBean.getData().getSex() != null)
+                        sex = 1;
 
-                usp.saveInfo(introduce, sex, loginBean.getData().getId(), avatar, loginBean.getData().getUsername());
+                    usp.saveInfo(introduce, sex, loginBean.getData().getId(), avatar, loginBean.getData().getUsername());
 
-                editor.apply();
-                Log.d("6666", "handleMessage: userid:" + loginBean.getData().getId());
-                //Log.d("6666", "handleMessage: userid:"+userid);
-                Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, userwindomActivity.class);
-                startActivity(intent);
-                finish();
-            }
-                else
+                    editor.apply();
+                    Log.d("6666", "handleMessage: userid:" + loginBean.getData().getId());
+                    //Log.d("6666", "handleMessage: userid:"+userid);
+                    Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, userwindomActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else
                     Toast.makeText(LoginActivity.this, loginBean.getMsg(), Toast.LENGTH_SHORT).show();
             }
         };
