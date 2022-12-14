@@ -55,14 +55,11 @@ public class PersonDetail extends AppCompatActivity {
     PersonDetailBean personDetailBean = null;
     private List<String> imgList;
     private String userId;
-    private String puserId;
     private String focusUserId;
 
     private TextView detail_title, detail_content, detail_useid, detail_time;
     private ImageView user_name_detail;
     private MaterialButton btFocous;
-    private ArrayList<String> list_title;
-
 
     Handler handler = new Handler(Looper.getMainLooper()) {
         @SuppressLint("NotifyDataSetChanged")
@@ -124,11 +121,11 @@ public class PersonDetail extends AppCompatActivity {
         mbanner = findViewById(R.id.banner);
         //设置mbanner设配器
         mbanner.setAdapter(new mbanneradapter(PersonDetail.this, imgList));
-//是否允许自动轮播
+        //是否允许自动轮播
         mbanner.isAutoLoop(true);
-//设置指示器， CircleIndicator为已经定义好的类，直接用就好
+        //设置指示器， CircleIndicator为已经定义好的类，直接用就好
         mbanner.setIndicator(new CircleIndicator(this));
-//开始轮播
+        //开始轮播
         mbanner.start();
 
         btFocous.setOnClickListener(new View.OnClickListener() {

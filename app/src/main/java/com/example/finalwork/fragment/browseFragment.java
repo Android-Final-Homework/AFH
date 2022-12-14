@@ -128,6 +128,7 @@ public class browseFragment extends Fragment {
                 Toast.makeText(getContext(), "刷新列表...", Toast.LENGTH_LONG).show();
                 browse();
             }
+
         });
         return root;
     }

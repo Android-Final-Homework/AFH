@@ -212,12 +212,6 @@ public class ChangeInfo extends AppCompatActivity {
 
                     Gson gson2 = new Gson();
                     uploadBean = gson2.fromJson(response.body().string(), UploadBean.class);
-                    //Log.d("6666", "onResponse返回的图片上传信息: "+uploadBean.getData().getImageUrlList().get(0));
-                    //子线程返回数据到主线程
-//                    Message msg = new Message();
-//                    msg.obj = uploadBean;
-//                    handler.sendMessage(msg);
-
                     avatar_temp = uploadBean.getData().getImageUrlList().get(0);
                     System.out.println("avatar=========" + avatar_temp);
                     user.setAvatar(avatar_temp);
@@ -318,8 +312,6 @@ public class ChangeInfo extends AppCompatActivity {
             //拍照后返回
             case TAKE_PHOTO:
                 if (resultCode == RESULT_OK) {
-                    //显示图片
-//                    displayImage(outputImagePath.getAbsolutePath());
                     System.out.println("Path:" + outputImagePath.getAbsolutePath());
                     file = new File(outputImagePath.getAbsolutePath());
                     if (cheak()) {
@@ -342,13 +334,6 @@ public class ChangeInfo extends AppCompatActivity {
                     }
                     System.out.println("aaPath:" + imagePath);
                     file = new File(imagePath);
-//                    if(file==null)
-//                    {
-//                        System.out.println("file===============null");
-//                    }else
-//                    {
-//                        System.out.println("file != null");
-//                    }
                     if (cheak()) {
                         postfile();
                     } else {
