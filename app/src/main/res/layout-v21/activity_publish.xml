@@ -5,39 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingTop="1dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
+
     tools:context="com.example.finalwork.fragment.publishFragment">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/detail_toolbar"
-        android:layout_width="377dp"
-        android:layout_height="58dp"
+        android:id="@+id/nav_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
         android:background="@color/mycolor1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
         app:subtitleTextColor="@color/white"
         app:titleMarginStart="60dp"
-        app:titleTextColor="@color/white" />
+        app:titleTextColor="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-3dp" />
 
     <TextView
-        android:id="@+id/pu_title"
+        android:id="@+id/detail_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:singleLine="true"
         android:text="发布"
-        android:textColor="#3E2723"
+        android:textColor="#5A5656"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@+id/detail_toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/detail_toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nav_toolbar" />
 
 
     <EditText
@@ -142,7 +137,7 @@
         android:layout_height="48dp"
         android:layout_marginEnd="208dp"
         android:layout_marginRight="208dp"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="188dp"
         android:backgroundTint="@color/white"
         android:text="保存分享"
         android:textColor="@color/black"

@@ -3,8 +3,8 @@ package com.example.finalwork.Utils;
 import android.app.Application;
 
 public class App extends Application {
-    private static String appId = "1bfe220c6b2b4f66a92bc0b07788c770";
-    private static String appSecret = "31963f285e49924744224aa30a79f58eee2ac";
+    private static String appId = "0d025be3cb124090af648452b9ddd68f";
+    private static String appSecret = "76538245f138847484930a956d6465ae4e8bf";
     private static String dummy_userId = "0";
     private static int current = 1;
     private static int size = 10;

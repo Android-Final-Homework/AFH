@@ -10,81 +10,82 @@
                                    app:cardUseCompatPadding="true"
 
                                    app:cardCornerRadius="25dp">
+
     <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bt_stlye"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:showIn="@layout/activity_my_share">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:showIn="@layout/activity_my_share">
 
         <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="-1dp"
-                android:background="@drawable/button_bg_style"/>
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-1dp"
+            android:background="@drawable/button_bg_style" />
         <!--头像-->
         <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/iv_head"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignLeft="@id/iv_image"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/bg_fmain"
-                app:riv_oval="true"/>
+            android:id="@+id/iv_head"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@id/iv_image"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/bg_fmain"
+            app:riv_oval="true" />
 
         <!--图片描述-->
         <TextView
-                android:id="@+id/tv_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="8dp"
-                android:paddingLeft="8dp"
-                android:paddingBottom="4dp"
-                android:text="图片描述"
-                android:textSize="16sp"
-                android:textStyle="normal"/>
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingBottom="4dp"
+            android:text="图片描述"
+            android:textSize="16sp"
+            android:textStyle="normal" />
 
         <!--分享的图片-->
         <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/iv_image"
-                android:layout_width="400dp"
-                android:layout_height="225dp"
-                android:layout_below="@id/tv_content"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/newcolor"
-                app:riv_corner_radius="10dp"/>
+            android:id="@+id/iv_image"
+            android:layout_width="400dp"
+            android:layout_height="225dp"
+            android:layout_below="@id/tv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/newcolor"
+            app:riv_corner_radius="10dp" />
 
         <!--图片发布日期-->
         <TextView
-                android:id="@+id/tv_publish_date"
-                style="@style/TextAppearance.AppCompat.Subhead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/iv_head"
-                android:layout_alignRight="@id/iv_image"
-                android:layout_marginRight="20dp"
-                android:text="2022-12-14"
-                android:textColor="@color/white"
-                android:textSize="16sp"/>
+            android:id="@+id/tv_publish_date"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_head"
+            android:layout_alignRight="@id/iv_image"
+            android:layout_marginRight="20dp"
+            android:text="2022-12-14"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!--用户名-->
 
@@ -94,87 +95,87 @@
 
 
         <TextView
-                android:id="@+id/tv_nickname"
-                style="@style/TextAppearance.AppCompat.Subhead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/iv_head"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="6dp"
-                android:layout_toRightOf="@id/iv_head"
-                android:textColor="@color/white"
-                android:text="昵称"
-                android:textSize="20sp"/>
+            android:id="@+id/tv_nickname"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_head"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="6dp"
+            android:layout_toRightOf="@id/iv_head"
+            android:text="昵称"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <TextView
-                android:id="@+id/tv_likes"
-                style="@style/TextAppearance.AppCompat.Subhead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/iv_image"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginBottom="8dp"
-                android:layout_toRightOf="@id/iv_like"
-                android:text="0"
-                android:textColor="@color/text_color"
-                android:textSize="22sp"/>
+            android:id="@+id/tv_likes"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_image"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/iv_like"
+            android:text="0"
+            android:textColor="@color/text_color"
+            android:textSize="22sp" />
 
         <ImageView
-                android:id="@+id/iv_like"
-                android:layout_width="27dp"
-                android:layout_height="27dp"
-                android:layout_below="@id/iv_image"
-                android:layout_alignLeft="@id/iv_image"
-                android:layout_marginLeft="32dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp"
-                android:clickable="true"
-                android:src="@drawable/like2"
-                tools:ignore="SpeakableTextPresentCheck"/>
+            android:id="@+id/iv_like"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/iv_image"
+            android:layout_alignLeft="@id/iv_image"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:src="@drawable/like2"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageView
-                android:id="@+id/iv_share"
-                android:layout_width="23dp"
-                android:layout_height="21dp"
-                android:layout_below="@id/iv_image"
-                android:layout_alignLeft="@id/iv_image"
-                android:layout_marginLeft="299dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginBottom="8dp"
-                android:clickable="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/zhuanfa"/>
+            android:id="@+id/iv_share"
+            android:layout_width="23dp"
+            android:layout_height="21dp"
+            android:layout_below="@id/iv_image"
+            android:layout_alignLeft="@id/iv_image"
+            android:layout_marginLeft="299dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/zhuanfa" />
 
         <ImageView
-                android:id="@+id/iv_collect"
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:layout_below="@id/iv_image"
-                android:layout_alignLeft="@id/iv_image"
-                android:layout_marginLeft="168dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="8dp"
-                android:clickable="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/collect"/>
+            android:id="@+id/iv_collect"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_below="@id/iv_image"
+            android:layout_alignLeft="@id/iv_image"
+            android:layout_marginLeft="168dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/collect" />
 
         <TextView
-                android:id="@+id/tv_collects"
-                style="@style/TextAppearance.AppCompat.Subhead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/iv_image"
-                android:layout_marginLeft="137dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginBottom="8dp"
-                android:layout_toRightOf="@id/iv_like"
-                android:text="0"
-                android:textColor="@color/text_color"
-                android:textSize="22sp"/>
+            android:id="@+id/tv_collects"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_image"
+            android:layout_marginLeft="137dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/iv_like"
+            android:text="0"
+            android:textColor="@color/text_color"
+            android:textSize="22sp" />
 
 
     </RelativeLayout>

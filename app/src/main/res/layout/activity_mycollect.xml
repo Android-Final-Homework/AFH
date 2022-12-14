@@ -4,6 +4,7 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
+    android:background="@color/logo2_background"
                                                    tools:context=".activity.myCollect">
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recylerview_collect"

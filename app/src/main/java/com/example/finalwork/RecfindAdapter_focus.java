@@ -48,8 +48,8 @@ public class RecfindAdapter_focus extends RecyclerView.Adapter<RecfindAdapter_fo
     private static final int POST_UNCOLLECT = 5;
     private MediaType MEDIA_TYPE_JSON;
 
-    private String appId = "27fc6823aab44ec59a915c49c00c4b4b";
-    private String appSecret = "466046abac4bdecfb4ee8ab60144d9c1add29";
+    private String appId = "0d025be3cb124090af648452b9ddd68f";
+    private String appSecret = "76538245f138847484930a956d6465ae4e8bf";
     private List<FindBean.DataBean.RecordsBean> showList = new ArrayList<>();
     String shareUserId1;
     String userId;
@@ -162,41 +162,6 @@ public class RecfindAdapter_focus extends RecyclerView.Adapter<RecfindAdapter_fo
             }
         });
 
-//        holder.ivLike.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (shows.isHasCollect()) {
-//                    if (shareUserId1 != null) {
-//                        PostUnCollect();
-//                        shows.setHasCollect(false);
-//                        holder.ivCollect.setImageResource(R.drawable.collect2);
-//                        //直接赋值，无需更新
-//                        if (temp_collect == -10) {
-//                            holder.tvCollectNum.setText(String.valueOf(Integer.valueOf(holder.tvCollectNum.getText().toString()) - 1));
-//                            temp_collect = Integer.valueOf(holder.tvCollectNum.getText().toString());
-//                        } else {
-//                            holder.tvCollectNum.setText(String.valueOf(Integer.valueOf(holder.tvCollectNum.getText().toString())));
-//                            temp_collect = -10;
-//                        }
-//                    }
-//                } else {
-//                    if (shareUserId1 != null) {
-//                        shows.setHasCollect(false);
-//                        PostCollect();
-//                        holder.ivCollect.setImageResource(R.drawable.collect);
-//                        if (temp_collect == -10) {
-//                            holder.tvCollectNum.setText(String.valueOf(Integer.valueOf(holder.tvCollectNum.getText().toString()) + 1));
-//                            temp_collect = Integer.valueOf(holder.tvCollectNum.getText().toString());
-//                        } else {
-//                            holder.tvCollectNum.setText(String.valueOf(Integer.valueOf(holder.tvCollectNum.getText().toString())));
-//                            temp_collect = -10;
-//                        }
-//                    }
-//                }
-//            }
-//        });
-
-
         //内容界面，点击跳转详情
         holder.tvContent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -281,82 +246,6 @@ public class RecfindAdapter_focus extends RecyclerView.Adapter<RecfindAdapter_fo
 
     }
 
-//    private void PostCollect() {
-//        OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
-//        MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
-//        FormBody.Builder formBody = new FormBody.Builder();//创建表单请求体
-////        formBody.add("username","");//传递键值对参数
-//        Headers headers = new Headers.Builder()
-//                .add("Accept", "application/json, text/plain, */*")
-//                .add("appId", appId)
-//                .add("appSecret", appSecret)
-//                .add("Content-Type", "application/json")
-//                .build();
-//
-//        Request request = new Request.Builder()//创建Request 对象。
-//                .url("http://47.107.52.7:88/member/photo/collect?shareId=" + shareUserId1 + "&userId=" + userId)
-//                .headers(headers)
-//                .post(RequestBody.create(MEDIA_TYPE_JSON, ""))//传递请求体
-//                .build();
-//        client.newCall(request).enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                Log.d("6666", "onFailure: ");
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                if (response.isSuccessful()) {//回调的方法执行在子线程。
-//                    Gson gson2 = new Gson();
-//                    defultBean = gson2.fromJson(response.body().string(), DefultBean.class);
-//                    Log.d("6666", "onResponse: 点赞上传");
-//
-//                    handler.sendEmptyMessage(POST_COLLECT);
-//                }
-//            }
-//        });
-//
-//    }
-//
-//    private void PostUnCollect() {
-//        OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
-//        MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
-//        FormBody.Builder formBody = new FormBody.Builder();//创建表单请求体
-////        formBody.add("username","");//传递键值对参数
-//        Headers headers = new Headers.Builder()
-//                .add("Accept", "application/json, text/plain, */*")
-//                .add("appId", appId)
-//                .add("appSecret", appSecret)
-//                .add("Content-Type", "application/json")
-//                .build();
-//
-//        Request request = new Request.Builder()//创建Request 对象。
-//                .url("http://47.107.52.7:88/member/photo/collect/cancel?likeId=" + likeId)
-//                .headers(headers)
-//                .post(RequestBody.create(MEDIA_TYPE_JSON, ""))//传递请求体
-//                .build();
-//        client.newCall(request).enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                Log.d("6666", "onFailure: ");
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                if (response.isSuccessful()) {//回调的方法执行在子线程。
-//                    Gson gson2 = new Gson();
-//                    defultBean = gson2.fromJson(response.body().string(), DefultBean.class);
-//                    Log.d("6666", "onResponse: 取消点赞");
-//
-//                    handler.sendEmptyMessage(POST_UNCOLLECT);
-//                }
-//            }
-//        });
-//
-//    }
-//
-
-
     private void browse() {
 
         MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
@@ -439,10 +328,7 @@ public class RecfindAdapter_focus extends RecyclerView.Adapter<RecfindAdapter_fo
             this.tvCollectNum = itemView.findViewById(R.id.tv_collects);
             this.ivCollect = itemView.findViewById(R.id.iv_collect);
             this.ivShare = itemView.findViewById(R.id.iv_share);
-
             this.adapter = adapter;
-
-
         }
     }
 
@@ -454,11 +340,9 @@ public class RecfindAdapter_focus extends RecyclerView.Adapter<RecfindAdapter_fo
         if (format == null || format.isEmpty()) {
             format = "MM-dd";
         }
-        //seconds=seconds.substring(0,seconds.length()-4);
         SimpleDateFormat sdf = new SimpleDateFormat(format);
 
         return sdf.format(new Date(Long.valueOf(seconds.substring(0, seconds.length() - 3) + "000")));
-        //return sdf.format(new Date(Long.valueOf(seconds)));
     }
 
 }
